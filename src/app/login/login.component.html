@@ -1,0 +1,35 @@
+<meta name="viewport" content="width=device-width,heigth=device-heigth,initial-scale=1.0"> 
+<div class="main" fxLayout="column" fxLayoutAlign="center center" >
+<mat-card class="matCard">
+  <mat-card-title class="matCardTitle" fxLayout="column" fxLayoutAlign="center center">
+  <h2 class="headertwo">FundooNotes</h2>
+</mat-card-title>
+<mat-card-subtitle class="matCardSubtitle" fxLayout="column" fxLayoutAlign="center center">
+  <h2>Login Page</h2>
+</mat-card-subtitle>
+<div class="example-container">
+<form [formGroup]="loginForm">
+  <div>
+      <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Enter your email" formControlName="email" [(ngModel)]="login.emailId" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>Email</mat-hint>
+        </mat-form-field>
+  </div>
+<div>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Enter your password" [type]="!hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="login.password" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-hint>Password</mat-hint>
+      </mat-form-field>
+  </div>
+  <div class="buttonLogin" fxLayoutGap="120px">
+      <button mat-raised-button color="primary" id="login" (click)="onlogin()">Login</button>
+      <button mat-raised-button color="primary" id="register" routerLink='/register'>Register</button>
+  </div>
+    </form>
+</div>
+</mat-card>
+</div>

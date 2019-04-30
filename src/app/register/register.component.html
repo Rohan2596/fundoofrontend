@@ -1,0 +1,55 @@
+<meta name="viewport" content="width=device-width,heigth=device-heigth,initial-scale=1.0"> 
+  <div class = "main" fxLayout="column" fxLayoutAlign="center center" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <mat-card class = "matCard" >
+        <mat-card-title class="matCardTitle" fxLayoutAlign="center center">
+          <h2 class = "headertwo">FundooNotes</h2>
+        </mat-card-title>
+        <mat-card-subtitle class = "matCardSubTitle" fxLayoutAlign="center center">
+          <h2>Register</h2>
+        </mat-card-subtitle>
+        
+        <div class="example-container">
+          <form [formGroup]="registerForm">
+          <div>
+            <mat-form-field  appearance="outline" class="input-style">
+              <mat-label>Name</mat-label>
+              <input type="text" matInput placeholder="Enter your name" formControlName="name" [(ngModel)]="user.name" pattern="[a-zA-Z ]*" required>
+              <mat-icon matSuffix> sentiment_satisfied_alt</mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="input-style">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="Enter your email" formControlName="email" [(ngModel)]="user.emailId" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="input-style">
+              <mat-label>Mobile</mat-label>
+              <input type="text" matInput placeholder="Enter your mobile number" formControlName="mobileNumber" [(ngModel)]="user.phNumber" pattern="[0-9]{10}" required>
+              <mat-icon matSuffix>call</mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="input-style">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Enter your password" [type]="!hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="user.password" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="buttonRegister" fxLayoutGap="120px">
+            <button mat-raised-button color="primary" id="register" (click)="onRegister()">Register</button>
+            <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button>
+          </div>
+        
+        </form>
+      </div>
+    </mat-card>
+  </div>
+  
+ 
+  
+  
+
