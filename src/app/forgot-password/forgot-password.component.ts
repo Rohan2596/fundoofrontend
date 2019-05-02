@@ -12,7 +12,10 @@ import { ForgotPassword } from "../models/forgotPassword";
 export class ForgotPasswordComponent implements OnInit {
 forgotPassword:ForgotPassword=new ForgotPassword();
 ForgotPasswordForm:FormGroup;
-constructor(private snackBar:MatSnackBar,private httpservice:HttpService, public formBuilder:FormBuilder) { }
+constructor(private snackBar:MatSnackBar,
+  private httpservice:HttpService, 
+  public formBuilder:FormBuilder,
+  ) { }
 
   ngOnInit() {
     this.ForgotPasswordForm=this.formBuilder.group(
