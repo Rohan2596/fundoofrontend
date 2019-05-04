@@ -1,0 +1,48 @@
+<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
+<mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
+      <mat-toolbar>
+    
+      <mat-toolbar-row>
+          <span>Remainder</span>
+          <span class="app-toolbar-filler"></span>
+          <mat-icon class="example-icon">remainder</mat-icon>
+        </mat-toolbar-row>
+  </mat-toolbar>
+
+</mat-sidenav>
+
+<mat-toolbar class="mattoolbar" fxLayout="row" fxLayoutAlign="center center">
+<mat-toolbar-row class="mattoolbarrow" >
+    <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+        <i class="material-icons">menu</i>
+    </button>
+    
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+    <span>FundooNotes</span>
+    <mat-form-field appearance="outline" class="search" >
+        <mat-label>Search</mat-label>
+        <input type="search" matInput placeholder="Search" >
+        <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-button class="app-settings-button">
+          <i class="material-icons">settings</i>
+        </button> 
+        
+        <button mat-button class="app-apps-button">
+            <i class="material-icons">apps</i>
+          </button> 
+          <button mat-button class="app-list-button">
+              <i class="material-icons">list</i>
+            </button> 
+        
+          <span>Account</span>
+            <span class="app-toolbar-filler"></span>
+            <mat-icon class="example-icon">account_circle</mat-icon>
+          
+  </mat-toolbar-row>
+</mat-toolbar>
+<p>The Air Nomads were a civilization composed of people who practiced the art of airbending. While nomadic, Air
+    Nomads did inhabit four major air temples, each built on remote locations, only easily reachable with flying
+    bison. The Air Nomads were a highly spiritual group of people.</p>
+</mat-sidenav-container> 

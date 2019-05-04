@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder,FormControl,FormGroup,Validator, Validators } from "@angular/forms";
 import { HttpService } from 'src/app/services/http-service';
-import { ResetPassword } from "../models/resetPassword";
+import { ResetPassword } from "../../models/resetPassword";
 import { ActivatedRoute,Router } from "@angular/router";
 
 @Component({

@@ -1,15 +1,15 @@
 <meta name="viewport" content="width=device-width,heigth=device-heigth,initial-scale=1.0"> 
   <div class = "main" fxLayout="column" fxLayoutAlign="center center" >
       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <mat-card class = "matCard" >
+    <mat-card class = "matCard" fxLayout="column" fxLayoutAlign="center center" >
         <mat-card-title class="matCardTitle" fxLayoutAlign="center center">
           <h2 class = "headertwo">FundooNotes</h2>
         </mat-card-title>
-        <mat-card-subtitle class = "matCardSubTitle" fxLayoutAlign="center center">
+        <mat-card-subtitle class = "matCardSubTitle" fxLayout="column" fxLayoutAlign="center center">
           <h2>Register</h2>
         </mat-card-subtitle>
         
-        <div class="example-container">
+        <div class="example-container" >
           <form [formGroup]="registerForm">
           <div>
             <mat-form-field  appearance="outline" class="input-style">
@@ -39,7 +39,8 @@
               <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
           </div>
-          <div class="buttonRegister" fxLayoutGap="120px">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+          <div class="buttonRegister" fxLayoutGap="195px">
             <button mat-raised-button color="primary" id="register" (click)="onRegister()">Register</button>
             <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button>
           </div>

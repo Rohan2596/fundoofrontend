@@ -6,25 +6,27 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './component/register/register.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import{MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LoginComponent } from './login/login.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './component/login/login.component';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ResetPasswordComponent } from './resetpassword/reset-password.component';
+import { ResetPasswordComponent } from './component/resetpassword/reset-password.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +44,10 @@ import { ResetPasswordComponent } from './resetpassword/reset-password.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+  
    
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

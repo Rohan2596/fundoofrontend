@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ForgotPassword } from "../models/forgotPassword";
+import { ForgotPassword } from "../../models/forgotPassword";
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Login } from '../models/login';
+import { Login } from '../../models/login';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
