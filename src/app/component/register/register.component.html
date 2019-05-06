@@ -1,11 +1,11 @@
-<meta name="viewport" content="width=device-width,heigth=device-heigth,initial-scale=1.0"> 
+
   <div class = "main" fxLayout="column" fxLayoutAlign="center center" >
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <mat-card class = "matCard" fxLayout="column" fxLayoutAlign="center center" >
-        <mat-card-title class="matCardTitle" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="space-between cente">
+    <mat-card >
+        <mat-card-title class="matCardTitle" >
           <h2 class = "headertwo">FundooNotes</h2>
         </mat-card-title>
-        <mat-card-subtitle class = "matCardSubTitle" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card-subtitle class = "matCardSubTitle">
           <h2>Register</h2>
         </mat-card-subtitle>
         
@@ -39,8 +39,8 @@
               <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
           </div>
-           <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-          <div class="buttonRegister" fxLayoutGap="195px">
+
+          <div class="buttonRegister" fxLayout="row" fxLayoutGap="80px">
             <button mat-raised-button color="primary" id="register" (click)="onRegister()">Register</button>
             <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button>
           </div>
@@ -49,7 +49,7 @@
       </div>
     </mat-card>
   </div>
-  
+  </div>
  
   
   

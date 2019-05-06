@@ -5,6 +5,7 @@ import { LoginComponent } from './component/login/login.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './component/resetpassword/reset-password.component';
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
+import { AuthenticationGuard } from "./services/AuthGuard";
 const routes: Routes = [
   {
     path:' ', redirectTo: 'login', pathMatch:'full'
@@ -28,6 +29,7 @@ const routes: Routes = [
     component : ResetPasswordComponent
 },
 {
+  canActivate:[AuthenticationGuard],
   path:'dashboard',
   component:DashboardComponent
 

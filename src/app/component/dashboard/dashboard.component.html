@@ -1,48 +1,106 @@
-<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
-<mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
-      <mat-toolbar>
-    
+
+
+<div style="overflow: hidden;margin-left: -26px;" class="main">
+    <div style="margin-left: 15px;">
+
+    <mat-toolbar class=".mat-toolbar">
       <mat-toolbar-row>
-          <span>Remainder</span>
-          <span class="app-toolbar-filler"></span>
-          <mat-icon class="example-icon">remainder</mat-icon>
-        </mat-toolbar-row>
-  </mat-toolbar>
+      <div class="buttonMenu" >
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="bulbsimage">
+        <img mat-card-image src="../../../assets/googlekeep.png" alt="FundooNotes">
+      </div>
+      <div>
+      <h1 class="example-app-name">FundooApp</h1>
+      </div>
+      <div  class="search" fxLayout="column" fxLayoutAlign="center">
 
-</mat-sidenav>
-
-<mat-toolbar class="mattoolbar" fxLayout="row" fxLayoutAlign="center center">
-<mat-toolbar-row class="mattoolbarrow" >
-    <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
-        <i class="material-icons">menu</i>
-    </button>
-    
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
-    <span>FundooNotes</span>
-    <mat-form-field appearance="outline" class="search" >
+      <mat-form-field appearance="outline" >
         <mat-label>Search</mat-label>
-        <input type="search" matInput placeholder="Search" >
+        <input type="search" matInput placeholder="Search">
         <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-        <button mat-button class="app-settings-button">
-          <i class="material-icons">settings</i>
-        </button> 
-        
-        <button mat-button class="app-apps-button">
-            <i class="material-icons">apps</i>
-          </button> 
-          <button mat-button class="app-list-button">
-              <i class="material-icons">list</i>
-            </button> 
-        
-          <span>Account</span>
-            <span class="app-toolbar-filler"></span>
-            <mat-icon class="example-icon">account_circle</mat-icon>
-          
-  </mat-toolbar-row>
-</mat-toolbar>
-<p>The Air Nomads were a civilization composed of people who practiced the art of airbending. While nomadic, Air
-    Nomads did inhabit four major air temples, each built on remote locations, only easily reachable with flying
-    bison. The Air Nomads were a highly spiritual group of people.</p>
-</mat-sidenav-container> 
+      </mat-form-field>
+      </div>
+      <div class="buttonSettings">
+        <button mat-icon-button >
+          <mat-icon>settings</mat-icon>
+        </button>
+      </div>
+      <div class="buttonList">
+        <button mat-icon-button >
+          <mat-icon>list</mat-icon>
+        </button>
+      </div>
+      <div class="buttonApps">
+        <button mat-icon-button >
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
+      <div  class="buttonAccountCircle">
+        <button mat-icon-button  [matMenuTriggerFor]="accountmenu" >
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+
+
+  <mat-divider></mat-divider>
+  <div class="mat-sidenav-container"> 
+    <mat-sidenav-container  style="height:100vh;">
+      <mat-sidenav  #sidenav mode="side" style="width: 124px">
+          <mat-nav-list>
+           
+            <div class="buttonApps">  
+            <button mat-icon-button >
+                  <mat-icon>notifications_none</mat-icon>
+                  <span>   Remainder</span>
+              </button>
+              </div>
+              <div class="buttonApps">
+              <button mat-icon-button  >
+                  <mat-icon>note_add</mat-icon>
+                  <span>  Notes</span>
+              </button>
+              </div>
+             
+  
+          </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <p>dfsjgsg</p>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+
+  <div>
+      <mat-menu #accountmenu="matMenu">
+          <mat-card style="height: 100px;width: 245px;">
+            <div fxLayout="row">
+              <mat-icon>account_circle</mat-icon>
+            </div>
+            <p fxLayout="row" fxLayoutAlign="center center"> {{email}} </p> 
+            <mat-divider></mat-divider>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <div>
+                <button routerLink="/register" routerLinkActive="active" fxLayoutAlign="start center" mat-raised-button>Add Account</button>
+              </div>
+              <div>
+                <button routerLink="/login" fxLayoutAlign="end center" mat-raised-button>Log Out</button>
+              </div>
+            </div>
+          </mat-card>
+          </mat-menu>
+  </div>
+
+
+
+
+</div> 
+
+
+
