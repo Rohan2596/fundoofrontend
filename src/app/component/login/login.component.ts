@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
 login:Login=new Login();
 loginForm:FormGroup;
-token:String;
+token:string;
   constructor( private snackBar:MatSnackBar,private httpservice:HttpService, 
     public formBuilder:FormBuilder,
     private route:ActivatedRoute,
@@ -27,6 +27,7 @@ token:String;
 
     )
     this.token=this.route.snapshot.paramMap.get('token')
+    
   }
   onlogin(){
   console.log("Login");
@@ -36,6 +37,7 @@ token:String;
       if(response.statusCode === 1){
         console.log(response);
         localStorage.setItem("token",response.token);
+        localStorage.setItem("email",this.login.emailId);
         this.snackBar.open(
           "Login Successfully",
           "undo",

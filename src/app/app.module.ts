@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './component/resetpassword/reset-password.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DemoMaterialModule } from './material.module';
+import { AppnoteComponent } from './component/appnote/appnote.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { DemoMaterialModule } from './material.module';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    AppnoteComponent
   ],
   imports: [
     BrowserModule,

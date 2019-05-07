@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
 import { ResetPasswordComponent } from './component/resetpassword/reset-password.component';
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
 import { AuthenticationGuard } from "./services/AuthGuard";
+import { AppnoteComponent } from './component/appnote/appnote.component';
 const routes: Routes = [
   {
     path:' ', redirectTo: 'login', pathMatch:'full'
@@ -31,7 +32,11 @@ const routes: Routes = [
 {
   canActivate:[AuthenticationGuard],
   path:'dashboard',
-  component:DashboardComponent
+  component:DashboardComponent,
+  children:[{
+    path:'',
+    component:AppnoteComponent
+  }]
 
 }
 ];

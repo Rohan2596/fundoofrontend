@@ -39,8 +39,8 @@
           <mat-icon>apps</mat-icon>
         </button>
       </div>
-      <div  class="buttonAccountCircle">
-        <button mat-icon-button  [matMenuTriggerFor]="accountmenu" >
+      <div  class="buttonAccountCircle" fxLayoutAlign="center" >
+        <button mat-mini-fab color=gray mat-icon-button  [matMenuTriggerFor]="accountmenu" style=" margin-left: 8px;" >
           <mat-icon>account_circle</mat-icon>
         </button>
       </div>
@@ -54,25 +54,29 @@
     <mat-sidenav-container  style="height:100vh;">
       <mat-sidenav  #sidenav mode="side" style="width: 124px">
           <mat-nav-list>
-           
-            <div class="buttonApps">  
-            <button mat-icon-button >
+           <mat-card>
+            <div class="buttonRemainder"> 
+            
+            <button mat-button style="margin-left: -24px">
                   <mat-icon>notifications_none</mat-icon>
-                  <span>   Remainder</span>
+                  <span matSuffix>Remainder</span>  
               </button>
+       
               </div>
-              <div class="buttonApps">
-              <button mat-icon-button  >
+              <div class="buttonNotes">
+              <button mat-button style="margin-left: -21px" >
                   <mat-icon>note_add</mat-icon>
                   <span>  Notes</span>
               </button>
               </div>
+              </mat-card>
              
   
           </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <p>dfsjgsg</p>
+      
+      <app-appnote></app-appnote>
     </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
@@ -90,7 +94,7 @@
                 <button routerLink="/register" routerLinkActive="active" fxLayoutAlign="start center" mat-raised-button>Add Account</button>
               </div>
               <div>
-                <button routerLink="/login" fxLayoutAlign="end center" mat-raised-button>Log Out</button>
+                <button mat-raised-button  fxLayoutAlign="end center" (click)="onlogout()">Log Out</button>
               </div>
             </div>
           </mat-card>
