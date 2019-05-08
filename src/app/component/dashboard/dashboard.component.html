@@ -25,22 +25,22 @@
       </mat-form-field>
       </div>
       <div >
-        <button mat-icon-button class="buttonSettings" >
+        <button mat-icon-button class="buttonSettings" matTooltip="settings " >
           <mat-icon>settings</mat-icon>
         </button>
       </div>
       <div >
-        <button mat-icon-button class="buttonList" >
+        <button mat-icon-button class="buttonList"  matTooltip="List">
           <mat-icon>list</mat-icon>
         </button>
       </div>
       <div >
-        <button mat-icon-button class="buttonApps">
+        <button mat-icon-button class="buttonApps" matTooltip="Apps">
           <mat-icon>apps</mat-icon>
         </button>
       </div>
       <div   fxLayoutAlign="center" style=" margin-left: 8px;">
-        <button mat-mini-fab color=gray mat-icon-button  [matMenuTriggerFor]="accountmenu" class="buttonAccountCircle" >
+        <button mat-mini-fab color=gray mat-icon-button  [matMenuTriggerFor]="accountmenu" class="buttonAccountCircle" matTooltip={{email}} >
           <mat-icon>account_circle</mat-icon>
         </button>
       </div>
@@ -57,13 +57,13 @@
            <mat-card>
             <div class="buttonRemainder"> 
             
-            <button mat-button style="margin-left: -24px">
+            <button mat-button style="margin-left: -24px" matTooltip="Remainder">
                   <mat-icon>notifications_none</mat-icon>
                   <span matSuffix>Remainder</span>  
               </button>
        
               </div>
-              <div class="buttonNotes">
+              <div class="buttonNotes" matTooltip="Notes">
               <button mat-button style="margin-left: -21px" >
                   <mat-icon>note_add</mat-icon>
                   <span>  Notes</span>

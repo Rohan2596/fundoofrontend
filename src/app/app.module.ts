@@ -22,6 +22,7 @@ import { ResetPasswordComponent } from './component/resetpassword/reset-password
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DemoMaterialModule } from './material.module';
 import { AppnoteComponent } from './component/appnote/appnote.component';
+import { AppIconComponent } from './component/app-icon/app-icon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { AppnoteComponent } from './component/appnote/appnote.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    AppnoteComponent
+    AppnoteComponent,
+    AppIconComponent
   ],
   imports: [
     BrowserModule,

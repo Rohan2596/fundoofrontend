@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './component/resetpassword/reset-password
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
 import { AuthenticationGuard } from "./services/AuthGuard";
 import { AppnoteComponent } from './component/appnote/appnote.component';
+import { AppIconComponent } from './component/app-icon/app-icon.component';
 const routes: Routes = [
   {
     path:' ', redirectTo: 'login', pathMatch:'full'
@@ -36,7 +37,11 @@ const routes: Routes = [
   children:[{
     path:'',
     component:AppnoteComponent
-  }]
+  },
+  { path:'',
+  component:AppIconComponent
+  }
+]
 
 }
 ];

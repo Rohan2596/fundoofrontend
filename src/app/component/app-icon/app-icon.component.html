@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="space-between end">
+
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Remind me">
+      <mat-icon>add_alert</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Collabrator">
+      <mat-icon>person_add</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Change Color" [matMenuTriggerFor]="colorplatte">
+      <mat-icon>color_lens</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Undo">
+      <mat-icon>image</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Undo">
+      <mat-icon>archive</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="More" [matMenuTriggerFor]="More">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="Undo">
+      <mat-icon>undo</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <button mat-icon-button class="buttonApps" matTooltip="redo">
+      <mat-icon>redo</mat-icon>
+    </button>
+  </div>
+
+<div>
+  <mat-menu #colorplatte="matMenu">
+    <mat-card>
+
+    </mat-card>
+  </mat-menu>
+</div>
+<div>
+  <mat-menu #More="matMenu">
+      <button mat-menu-item>Add label</button>
+  <button mat-menu-item>Add drawing</button>
+  <button mat-menu-item>Show Checkboxes</button>
+  
+  </mat-menu>
+</div>
+
+</div>
