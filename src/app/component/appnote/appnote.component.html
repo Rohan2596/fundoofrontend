@@ -1,11 +1,55 @@
-<div fxLayout="row" fxLayoutAlign="center start" > 
-<div>
-<mat-card class="example-card">
-    <div fxLayout="row" fxLayoutAlign="end end">
-        <input type="text" matInput placeholder="Take a Note">
-        <mat-icon>photo</mat-icon>
-         <mat-icon>check_box</mat-icon>
-         </div>
-      </mat-card>
-</div> 
+<div flex=10 fxLayoutAlign="center center" class="main" style="margin-top: 2%">
+
+  <div>
+    <mat-card *ngIf="!popup" (click)="onPopup()" class="popupCard">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          <input matInput type="text" placeholder="Take a Note..."
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;" />
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-icon-button>
+            <mat-icon matTooltip="New List">check_box</mat-icon>
+          </button>
+
+          <button mat-icon-button>
+            <mat-icon matTooltip="New note with drawing">brush</mat-icon>
+          </button>
+
+          <button mat-icon-button>
+            <mat-icon matTooltip="New note with image">image</mat-icon>
+          </button>
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div flex=100 fxLayoutAlign="center center" style="margin-top: 2%">
+    <mat-card *ngIf="popup" fxLayoutAlign="start center" class="popdownCard">
+      <div flex=10 fxLayout="column" fxLayoutAlign="start start">
+
+        <div style="margin-top:-12px">
+          <input matInput type="text" placeholder="Title"
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;" />
+        </div>
+
+
+        <div style="margin-top:15px">
+          <input matInput type="text" placeholder="Take a note..."
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;" />
+        </div>
+
+        <div>
+          <button mat-button>
+            <mat-icon matTooltip="Close the note">cancel</mat-icon>
+          </button>
+        </div>
+
+      </div>
+    </mat-card>
+
+  </div>
+
 </div>

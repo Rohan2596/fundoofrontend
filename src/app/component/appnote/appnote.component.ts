@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appnote.component.scss']
 })
 export class AppnoteComponent implements OnInit {
-
+private  popup:boolean;
   constructor() { }
 
   ngOnInit() {
   }
-
+  onPopup(){
+    this.popup=true
+  }
 }
