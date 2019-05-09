@@ -1,23 +1,27 @@
 <div flex=10 fxLayoutAlign="center center" class="main" style="margin-top: 2%">
 
   <div>
-    <mat-card *ngIf="!popup" (click)="onPopup()" class="popupCard">
+    <mat-card *ngIf="!popup" (click)="onPopup()"  class="popupCard">
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>
           <input matInput type="text" placeholder="Take a Note..."
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;" />
         </div>
         <div fxLayout="row" fxLayoutAlign="end center">
-          <button mat-icon-button>
-            <mat-icon matTooltip="New List">check_box</mat-icon>
+          <button  matTooltip="New List" style="background-color: white;border-width: 0px;" >
+           
+            <img src="https://img.icons8.com/color/24/000000/approval.png" >
           </button>
 
-          <button mat-icon-button>
-            <mat-icon matTooltip="New note with drawing">brush</mat-icon>
+          <button matTooltip="New note with drawing" style="background-color: white;border-width: 0px;">
+            
+            <img src="https://img.icons8.com/color/24/000000/paint.png">
           </button>
 
-          <button mat-icon-button>
-            <mat-icon matTooltip="New note with image">image</mat-icon>
+          <button matTooltip="New note with image" style="background-color: white;border-width: 0px;" >
+           
+            <img src="https://img.icons8.com/color/24/000000/add-image.png">
+
           </button>
 
         </div>
@@ -33,20 +37,20 @@
       <div flex=10 fxLayout="column" fxLayoutAlign="start start">
 
         <div style="margin-top:-12px">
-          <input matInput type="text" placeholder="Title"
+          <input matInput type="text" placeholder="Title" [(ngModel)]="note.title"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;" />
         </div>
 
 
         <div style="margin-top:15px">
-          <input matInput type="text" placeholder="Take a note..."
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;" />
+          <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;" ></textarea>
         </div>
 
        
         <div fxLayout="row" fxLayoutAlign="space-between end" >
           <app-app-icon></app-app-icon>
-          <button mat-button>
+          <button mat-button  (click)="onClose()" (click)="popup">
             <mat-icon matTooltip="Close the note">close</mat-icon>
           </button>
         </div>

@@ -6,8 +6,8 @@
     <mat-toolbar class=".mat-toolbar">
       <mat-toolbar-row>
       <div >
-        <button mat-icon-button (click)="sidenav.toggle()" class="buttonMenu" >
-          <mat-icon>menu</mat-icon>
+        <button  (click)="sidenav.toggle()" class="buttonMenu"  style="border-width: 0px;background: white;margin-top: 9px">
+            <img src="https://img.icons8.com/color/36/000000/menu.png">
         </button>
       </div>
       <div >
@@ -25,23 +25,24 @@
       </mat-form-field>
       </div>
       <div >
-        <button mat-icon-button class="buttonSettings" matTooltip="settings " >
-          <mat-icon>settings</mat-icon>
+        <button  class="buttonSettings" matTooltip="settings " style="border-width: 0px;background: white;margin-top: 9px;margin:auto">
+            <img src="https://img.icons8.com/color/36/000000/settings.png">        
+          </button>
+      </div>
+      <div >
+        <button mat-icon-button class="buttonList"  matTooltip="List" style="border-width: 0px;background: white;margin-top: 1px;margin:auto">
+            <img src="https://img.icons8.com/color/36/000000/ingredients-list.png">
+
         </button>
       </div>
       <div >
-        <button mat-icon-button class="buttonList"  matTooltip="List">
-          <mat-icon>list</mat-icon>
+        <button  class="buttonApps" matTooltip="Apps" [matMenuTriggerFor]="social" style="border-width: 0px;background: white;margin-top: 12px">
+            <img src="https://img.icons8.com/color/36/000000/activity-grid-2.png">
         </button>
       </div>
-      <div >
-        <button mat-icon-button class="buttonApps" matTooltip="Apps">
-          <mat-icon>apps</mat-icon>
-        </button>
-      </div>
-      <div   fxLayoutAlign="center" style=" margin-left: 8px;">
-        <button mat-mini-fab color=gray mat-icon-button  [matMenuTriggerFor]="accountmenu" class="buttonAccountCircle" matTooltip={{email}} >
-          <mat-icon>account_circle</mat-icon>
+      <div   fxLayoutAlign="center" >
+        <button color=gray  [matMenuTriggerFor]="accountmenu" class="buttonAccountCircle" matTooltip={{email}} style="border-width: 0px;background: white;margin:auto" >
+            <img src="https://img.icons8.com/color/48/000000/user-male-circle.png">
         </button>
       </div>
       </mat-toolbar-row>
@@ -99,6 +100,12 @@
             </div>
           </mat-card>
           </mat-menu>
+  </div>
+  <div>
+    <mat-menu #social="matMenu">
+      <app-app-social></app-app-social>
+    </mat-menu>
+    
   </div>
 
 

@@ -23,6 +23,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DemoMaterialModule } from './material.module';
 import { AppnoteComponent } from './component/appnote/appnote.component';
 import { AppIconComponent } from './component/app-icon/app-icon.component';
+import { AppSocialComponent } from './component/app-social/app-social.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { AppIconComponent } from './component/app-icon/app-icon.component';
     ResetPasswordComponent,
     DashboardComponent,
     AppnoteComponent,
-    AppIconComponent
+    AppIconComponent,
+    AppSocialComponent
   ],
   imports: [
     BrowserModule,
