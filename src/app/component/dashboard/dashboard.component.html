@@ -6,12 +6,13 @@
     <mat-toolbar class=".mat-toolbar">
       <mat-toolbar-row>
       <div >
-        <button  (click)="sidenav.toggle()" class="buttonMenu"  style="border-width: 0px;background: white;margin-top: 9px">
-            <img src="https://img.icons8.com/color/36/000000/menu.png">
+        <button  (click)="sidenav.toggle()" class="buttonMenu"  style="border-width: 0px;background: whitesmoke;margin-top: 9px">
+          <img src="https://img.icons8.com/bubbles/50/000000/menu.png">
         </button>
       </div>
       <div >
-        <img mat-card-image src="../../../assets/googlekeep.png" alt="FundooNotes" class="bulbsimage">
+        <!-- <img mat-card-image src="../../../assets/googlekeep.png" alt="FundooNotes" class="bulbsimage"> -->
+        <img src="https://img.icons8.com/dusk/64/000000/light-on.png">
       </div>
       <div>
       <h1 class="example-app-name">FundooApp</h1>
@@ -25,18 +26,18 @@
       </mat-form-field>
       </div>
       <div >
-        <button  class="buttonSettings" matTooltip="settings " style="border-width: 0px;background: white;margin-top: 9px;margin:auto">
+        <button  class="buttonSettings" matTooltip="settings " style="border-width: 0px;background: whitesmoke;margin-top: 9px;margin:auto">
             <img src="https://img.icons8.com/color/36/000000/settings.png">        
           </button>
       </div>
       <div >
-        <button mat-icon-button class="buttonList"  matTooltip="List" style="border-width: 0px;background: white;margin-top: 1px;margin:auto">
+        <button mat-icon-button class="buttonList"  matTooltip="List" style="border-width: 0px;background: whitesmoke;margin-top: 1px;margin:auto">
             <img src="https://img.icons8.com/color/36/000000/ingredients-list.png">
 
         </button>
       </div>
       <div >
-        <button  class="buttonApps" matTooltip="Apps" [matMenuTriggerFor]="social" style="border-width: 0px;background: white;margin-top: 12px">
+        <button  class="buttonApps" matTooltip="Apps" [matMenuTriggerFor]="social" style="border-width: 0px;background: whitesmoke;margin-top: 12px">
             <img src="https://img.icons8.com/color/36/000000/activity-grid-2.png">
         </button>
       </div>
@@ -56,17 +57,17 @@
       <mat-sidenav  #sidenav mode="side" style="width: 124px">
           <mat-nav-list>
            <mat-card>
-            <div class="buttonRemainder"> 
+            <div class="buttonRemainder" style="margin-left: -11px"> 
             
-            <button mat-button style="margin-left: -24px" matTooltip="Remainder">
-                  <mat-icon>notifications_none</mat-icon>
-                  <span matSuffix>Remainder</span>  
+            <button  style="margin-left: 1px" matTooltip="Remainder" style="background-color: whitesmoke;border-width: 0px;">
+              <img src="https://img.icons8.com/color/24/000000/appointment-reminders.png">
+                  <span>Remainder</span>  
               </button>
        
               </div>
-              <div class="buttonNotes" matTooltip="Notes">
-              <button mat-button style="margin-left: -21px" >
-                  <mat-icon>note_add</mat-icon>
+              <div class="buttonNotes" style="margin-left: -11px;margin-top:11px" >
+              <button  style="margin-left: -11px" matTooltip="Notes" style="background-color: whitesmoke;border-width: 0px;" >
+                  <img src="https://img.icons8.com/color/24/000000/light-on.png">
                   <span>  Notes</span>
               </button>
               </div>
@@ -75,9 +76,10 @@
   
           </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content style="width: 100%;">
+    <mat-sidenav-content style="width: 100%;background: whitesmoke ">
       
       <app-appnote></app-appnote>
+      <app-note></app-note>
     </mat-sidenav-content>  
     </mat-sidenav-container>
   </div>

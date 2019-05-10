@@ -16,4 +16,7 @@ export class NoteService{
     public postRequest(url:any,data:any):any{
         return this.http.post(this.baseurl+url,data,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
     }
+    public getRequest(url:any):any{
+        return this.http.get(this.baseurl+url,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
+    }
 }

@@ -24,6 +24,8 @@ import { DemoMaterialModule } from './material.module';
 import { AppnoteComponent } from './component/appnote/appnote.component';
 import { AppIconComponent } from './component/app-icon/app-icon.component';
 import { AppSocialComponent } from './component/app-social/app-social.component';
+import { NoteComponent } from './component/note/note.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { AppSocialComponent } from './component/app-social/app-social.component'
     DashboardComponent,
     AppnoteComponent,
     AppIconComponent,
-    AppSocialComponent
+    AppSocialComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,

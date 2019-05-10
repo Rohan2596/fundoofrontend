@@ -1,31 +1,31 @@
 <div flex=10 fxLayoutAlign="center center" class="main" style="margin-top: 2%">
 
   <div>
-    <mat-card *ngIf="!popup" (click)="onPopup()"  class="popupCard">
+    <mat-card *ngIf="!popup" (click)="onPopup()" class="popupCard">
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>
           <input matInput type="text" placeholder="Take a Note..."
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;" />
         </div>
         <div fxLayout="row" fxLayoutAlign="end center">
-          <button  matTooltip="New List" style="background-color: white;border-width: 0px;" >
-           
-            <img src="https://img.icons8.com/color/24/000000/approval.png" >
+          <button matTooltip="New List" style="background-color: white;border-width: 0px;">
+
+            <img src="https://img.icons8.com/color/24/000000/approval.png">
           </button>
 
           <button matTooltip="New note with drawing" style="background-color: white;border-width: 0px;">
-            
+
             <img src="https://img.icons8.com/color/24/000000/paint.png">
           </button>
 
-          <button matTooltip="New note with image" style="background-color: white;border-width: 0px;" >
-           
+          <button matTooltip="New note with image" style="background-color: white;border-width: 0px;">
+
             <img src="https://img.icons8.com/color/24/000000/add-image.png">
 
           </button>
 
         </div>
-       
+
 
       </div>
     </mat-card>
@@ -44,18 +44,20 @@
 
         <div style="margin-top:15px">
           <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;" ></textarea>
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;"></textarea>
         </div>
 
-       
-        <div fxLayout="row" fxLayoutAlign="space-between end" >
+
+        <div fxLayout="row" fxLayoutAlign="space-between end">
           <app-app-icon></app-app-icon>
-          <button mat-button  (click)="onClose()" (click)="popup">
-            <mat-icon matTooltip="Close the note">close</mat-icon>
+          <button (click)="onClose()" (click)="popup" matTooltip="Close the note"
+            style="border-width: 0px;background: white;margin-top: 9px;margin:auto">
+
+            <img src="https://img.icons8.com/color/24/000000/cancel.png">
           </button>
         </div>
-        
-        
+
+
 
 
       </div>

@@ -9,6 +9,7 @@ import { AuthenticationGuard } from "./services/AuthGuard";
 import { AppnoteComponent } from './component/appnote/appnote.component';
 import { AppIconComponent } from './component/app-icon/app-icon.component';
 import { AppSocialComponent } from './component/app-social/app-social.component';
+import { NoteComponent } from "./component/note/note.component";
 const routes: Routes = [
   {
     path:' ', redirectTo: 'login', pathMatch:'full'
@@ -45,7 +46,12 @@ const routes: Routes = [
   {
     path:'',
     component:AppSocialComponent
+  },
+  {
+    path:'',
+    component:NoteComponent
   }
+
 ]
 
 }
