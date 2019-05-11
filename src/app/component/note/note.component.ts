@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatDialog } from "@angular/material";
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
@@ -8,7 +11,9 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class NoteComponent implements OnInit {
 note:any[]
-  constructor(private snackBar:MatSnackBar,private noteservice:NoteService) { }
+  constructor(private snackBar:MatSnackBar,
+    private noteservice:NoteService,
+    private dialog:MatDialog) { }
 
 ngOnInit() {
   
@@ -19,5 +24,9 @@ this.noteservice.getRequest("getnotes").subscribe(
  console.log(response)
   })
   }
+openDialog(){
+  const dialogRef=this.dialog.open(DialogBoxComponent);
+  dialogRef.afterClosed().subscribe();
+}
 
 }

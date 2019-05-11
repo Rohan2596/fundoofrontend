@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between end">
+<div fxLayout="row" fxLayoutAlign="space-between center">
 
   <div>
     <button  class="buttonApps" matTooltip="Remind me" style="background-color: white;border-width: 0px;" >
@@ -31,17 +31,7 @@
       <img src="https://img.icons8.com/bubbles/24/000000/menu-2.png">
     </button>
   </div>
-  <div>
-    <button  class="buttonApps" matTooltip="Undo" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/color/24/000000/undo.png">
-    </button>
-  </div>
-
-  <div>
-    <button  class="buttonApps" matTooltip="redo" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/color/24/000000/redo.png">
-    </button>
-  </div>
+ 
 
 <div>
   <mat-menu #colorplatte="matMenu">
@@ -53,8 +43,8 @@
 <div>
   <mat-menu #More="matMenu">
       <button mat-menu-item>Add label</button>
-  <button mat-menu-item>Add drawing</button>
-  <button mat-menu-item>Show Checkboxes</button>
+  <button mat-menu-item >Change label</button>
+  <button (click)="deleteNote()" mat-menu-item >Delete Note</button>
   
   </mat-menu>
 </div>

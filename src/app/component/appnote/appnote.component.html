@@ -2,7 +2,9 @@
 
   <div>
     <mat-card *ngIf="!popup" (click)="onPopup()" class="popupCard">
+   
       <div fxLayout="row" fxLayoutAlign="space-between center">
+       
         <div>
           <input matInput type="text" placeholder="Take a Note..."
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;" />
@@ -34,12 +36,19 @@
 
   <div flex=100 fxLayoutAlign="center center" style="margin-top: 2%">
     <mat-card *ngIf="popup" fxLayoutAlign="start center" class="popdownCard">
+       
       <div flex=10 fxLayout="column" fxLayoutAlign="start start">
+        
 
-        <div style="margin-top:-12px">
+        <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px">
           <input matInput type="text" placeholder="Title" [(ngModel)]="note.title"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;" />
-        </div>
+            <button matTooltip="pin" style="background-color: white;border-width: 0px;">
+    
+                <img src="https://img.icons8.com/dusk/24/000000/pin.png">
+              </button>
+        
+          </div>
 
 
         <div style="margin-top:15px">
@@ -51,7 +60,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between end">
           <app-app-icon></app-app-icon>
           <button (click)="onClose()" (click)="popup" matTooltip="Close the note"
-            style="border-width: 0px;background: white;margin-top: 9px;margin:auto">
+            style="border-width: 0px;background: white;margin-top: 9px;margin-left: 28px">
 
             <img src="https://img.icons8.com/color/24/000000/cancel.png">
           </button>
