@@ -11,14 +11,12 @@ export class AppIconComponent implements OnInit {
   constructor(private snackBar:MatSnackBar,private  noteservice:NoteService  ) { }
 
   ngOnInit() {
-    console.log('note data',this.noteData);
-
-    
+    // console.log('note data',this.noteData);
   }
   deleteNote(){
     console.log("note delete");
     
-    this.noteservice.putRequest("deletenotes?id="+this.noteData.id).subscribe(
+    this.noteservice.putRequest("deletenotes?id="+this.noteData.id,'').subscribe(
       (response:any)=>{
         if(response.statusCode===10){
           console.log()

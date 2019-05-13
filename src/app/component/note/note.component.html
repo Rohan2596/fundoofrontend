@@ -4,10 +4,14 @@
   <div  fxLayout="column" fxLayoutAlign="center center">
 
   
-      <div  (click)="openDialog()"
+      <div  (click)="openDialog(items)"
         style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
-        {{items.title}}</div>
-      <div 
+        {{items.title}}
+        <button matTooltip="pin" style="background-color: white;border-width: 0px;">
+    
+          <img src="https://img.icons8.com/dusk/24/000000/pin.png">
+        </button></div>
+      <div (click)="openDialog(items)"
         style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
         {{items.description}}</div>
 
@@ -16,7 +20,7 @@
 
 
     <div fxLayout="row" fxLayoutAlign="space-between end"  fxLayoutGap="10px">
-      <app-app-icon [noteData]="items" ></app-app-icon>
+      <app-app-icon></app-app-icon>
       <button  matTooltip="Close the note"
         style="border-width: 0px;background: white;margin-top: 9px;">
 

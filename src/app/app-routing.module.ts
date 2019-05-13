@@ -10,7 +10,7 @@ import { AppnoteComponent } from './component/appnote/appnote.component';
 import { AppIconComponent } from './component/app-icon/app-icon.component';
 import { AppSocialComponent } from './component/app-social/app-social.component';
 import { NoteComponent } from "./component/note/note.component";
-import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
 const routes: Routes = [
   {
     path:' ', redirectTo: 'login', pathMatch:'full'

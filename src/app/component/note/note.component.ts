@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { MatDialog } from "@angular/material";
+import { MatDialog,} from "@angular/material";
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+
 
 @Component({
   selector: 'app-note',
@@ -10,10 +11,13 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-note:any[]
+note:any[];
+data:any[];
   constructor(private snackBar:MatSnackBar,
     private noteservice:NoteService,
-    private dialog:MatDialog) { }
+    private dialog:MatDialog,
+   
+    ) { }
 
 ngOnInit() {
   
@@ -24,9 +28,15 @@ this.noteservice.getRequest("getnotes").subscribe(
  console.log(response)
   })
   }
-openDialog(){
-  const dialogRef=this.dialog.open(DialogBoxComponent);
-  dialogRef.afterClosed().subscribe();
+openDialog(items:any):void{
+  const dialogRef=this.dialog.open(DialogBoxComponent,{
+      data: { title:items.title,
+              description:items.description,
+              noteId:items.id}
+    });
+  dialogRef.afterClosed().subscribe(result=>{
+    console.log('dialog result:${result}');
+  });
 }
 
 }
