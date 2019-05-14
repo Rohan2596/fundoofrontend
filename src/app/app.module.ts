@@ -26,6 +26,7 @@ import { AppIconComponent } from './component/app-icon/app-icon.component';
 import { AppSocialComponent } from './component/app-social/app-social.component';
 import { NoteComponent } from './component/note/note.component';
 import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
+import { TrashBoxComponent } from './component/trash-box/trash-box.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DialogBoxComponent } from './component/dialog-box/dialog-box.component'
     AppSocialComponent,
     NoteComponent,
     DialogBoxComponent,
+    TrashBoxComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,7 @@ id=this.data.noteId;
   ngOnInit() {
 
   }
+  
 
   onClose() {
     console.log("note created");

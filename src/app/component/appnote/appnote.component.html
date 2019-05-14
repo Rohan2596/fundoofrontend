@@ -5,9 +5,9 @@
    
       <div fxLayout="row" fxLayoutAlign="space-between center">
        
-        <div>
+        <div style="    border-width: 0px;">
           <input matInput type="text" placeholder="Take a Note..."
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;" />
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;    border-width: 0px;" />
         </div>
         <div fxLayout="row" fxLayoutAlign="end center">
           <button matTooltip="New List" style="background-color: white;border-width: 0px;">
@@ -40,9 +40,9 @@
       <div flex=10 fxLayout="column" fxLayoutAlign="start start">
         
 
-        <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px">
+        <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px;border-width: 0px">
           <input matInput type="text" placeholder="Title" [(ngModel)]="note.title"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;" />
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px;" />
             <button matTooltip="pin" style="background-color: white;border-width: 0px;">
     
                 <img src="https://img.icons8.com/dusk/24/000000/pin.png">
@@ -51,14 +51,14 @@
           </div>
 
 
-        <div style="margin-top:15px">
+        <div style="margin-top:15px;border-width: 0px">
           <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 270px;"></textarea>
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 270px;    border-width: 0px;"></textarea>
         </div>
 
 
         <div fxLayout="row" fxLayoutAlign="space-between end">
-          <app-app-icon></app-app-icon>
+          <app-app-icon [noteData]=""></app-app-icon>
           <button (click)="onClose()" (click)="popup" matTooltip="Close the note"
             style="border-width: 0px;background: white;margin-top: 9px;margin-left: 28px">
 

@@ -21,7 +21,7 @@
     </button>
   </div>
   <div>
-    <button  class="buttonApps" matTooltip="Archive" style="background-color: white;border-width: 0px;">
+    <button  (click)="archive()" class="buttonApps" matTooltip="Archive" style="background-color: white;border-width: 0px;">
       <img src="https://img.icons8.com/color/24/000000/archive-folder.png">
     </button>
   </div>
@@ -44,7 +44,7 @@
   <mat-menu #More="matMenu">
       <button mat-menu-item>Add label</button>
   <button mat-menu-item >Change label</button>
-  <button (click)="deleteNote()" mat-menu-item >Delete Note</button>
+  <button (click)="trashNote()" mat-menu-item >Delete Note</button>
   
   </mat-menu>
 </div>

@@ -26,7 +26,7 @@ this.noteservice.getRequest("getnotes").subscribe(
   (response: any) => {
  this.note=response,
  console.log(response)
-  })
+  })                  
   }
 openDialog(items:any):void{
   const dialogRef=this.dialog.open(DialogBoxComponent,{

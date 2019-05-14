@@ -14,16 +14,17 @@
         <img  src="../../../assets/googlekeep.png" alt="FundooNotes" class="bulbsimage">
         <!-- <img src="https://img.icons8.com/dusk/64/000000/light-on.png"> -->
       </div>
-      <div>
+      <div fxHide.xs>
       <h1 class="example-app-name">FundooApp</h1>
       </div>
       <div  class="search" fxLayout="column" fxLayoutAlign="center">
 
-      <mat-form-field appearance="outline" >
+      <mat-card appearance="outline" style="border-radius: 72px">
+          <mat-icon matSuffix>search</mat-icon>
         <mat-label>Search</mat-label>
-        <input type="search" matInput placeholder="Search">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+        <!-- <input type="search" matInput placeholder="Search"> -->
+       
+      </mat-card>
       </div>
       <div >
         <button  class="buttonSettings" matTooltip="settings " style="border-width: 0px;background: whitesmoke;margin-top: 9px;margin:auto">
@@ -56,30 +57,48 @@
     <mat-sidenav-container  style="height:100vh;width: 100%;">
       <mat-sidenav  #sidenav mode="side" style="width: 124px">
           <mat-nav-list>
-           <mat-card>
-            <div class="buttonRemainder" style="margin-left: -11px"> 
+            <div>
+           <mat-card style="border-radius: 72px">
+            <div class="buttonRemainder" style="margin:19px" fxLayoutAlign="center"> 
             
             <button  style="margin-left: 1px" matTooltip="Remainder" style="background-color: whitesmoke;border-width: 0px;">
-              <img src="https://img.icons8.com/color/24/000000/appointment-reminders.png">
+              <img src="https://img.icons8.com/color/36/000000/appointment-reminders.png">
                   <span>Remainder</span>  
               </button>
        
               </div>
-              <div class="buttonNotes" style="margin-left: -11px;margin-top:11px" >
+              <div class="buttonNotes" style="margin:19px" fxLayoutAlign="center" >
               <button  style="margin-left: -11px" matTooltip="Notes" style="background-color: whitesmoke;border-width: 0px;" >
-                  <img src="https://img.icons8.com/color/24/000000/light-on.png">
+                  <img src="https://img.icons8.com/color/36/000000/light-on.png">
                   <span>  Notes</span>
               </button>
               </div>
               </mat-card>
-             
+              </div>
+              <div style="border-bottom-width: 2px">
+              <mat-card style="border-radius: 72px">
+                <div class="buttonRemainder" style="margin:19px" fxLayoutAlign="center" > 
+                
+                <button  style="margin-left: 1px" matTooltip="Archive" style="background-color: whitesmoke;border-width: 0px;" >
+                  <img src="https://img.icons8.com/color/36/000000/archive-folder.png">
+                      <span>Archive</span>  
+                  </button>
+           
+                  </div>
+                  <div class="buttonNotes" style="margin:19px" fxLayoutAlign="center" >
+                  <button (click)="trashbox()" style="margin-left: 1px" matTooltip="Trash" style="background-color: whitesmoke;border-width: 0px;" >
+                    <img src="https://img.icons8.com/bubbles/48/000000/trash.png">
+                      <span>Trash</span>
+                  </button>
+                  </div>
+                  </mat-card>
+</div>             
   
           </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content style="width: 100%;background: whitesmoke ">
-      
-      <app-appnote></app-appnote>
-      <app-note></app-note>
+        <router-outlet></router-outlet>
+
     </mat-sidenav-content>  
     </mat-sidenav-container>
   </div>

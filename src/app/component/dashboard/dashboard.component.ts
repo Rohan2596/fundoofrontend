@@ -24,4 +24,8 @@ login:Login=new Login()
     localStorage.removeItem('email');
      this.router.navigate(['/login']);
   }
+  trashbox(){
+    this.router.navigate(['/dashboard/trash']);
+    
+  }
 }

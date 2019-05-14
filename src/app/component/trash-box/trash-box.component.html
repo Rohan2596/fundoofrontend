@@ -1,13 +1,11 @@
-<div fxLayoutAlign="center center"><app-appnote></app-appnote></div>
 <div style="margin: 20px" class="cardList">
- 
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
     <mat-card class="popdownCard" fxLayout="column" fxLayoutAlign="center center">
       <div fxLayout="column" fxLayoutAlign="center center">
 
 
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:12px">
-          <div (click)="openDialog(items)"
+          <div
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
             {{items.title}}
             <button matTooltip="pin" style="background-color: white;border-width: 0px;">
@@ -16,7 +14,7 @@
             </button>
           </div>
         </div>
-        <div (click)="openDialog(items)"
+        <div 
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
           {{items.description}}</div>
 
@@ -24,9 +22,23 @@
 
 
 
-        <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
-          <app-app-icon [noteData]="items"></app-app-icon>
+
+        <div>
+          <button class="buttonApps" matTooltip="More" [matMenuTriggerFor]="More"
+            style="background-color: white;border-width: 0px;">
+            <img src="https://img.icons8.com/bubbles/24/000000/menu-2.png">
+          </button>
         </div>
+        <div >
+          <mat-menu #More="matMenu" >
+
+            <button mat-menu-item>Restore Note</button>
+            <button mat-menu-item (click)="perDelete(items)">Delete Note</button>
+
+          </mat-menu>
+        </div>
+
+
 
 
 

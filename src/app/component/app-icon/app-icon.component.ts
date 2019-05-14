@@ -13,10 +13,11 @@ export class AppIconComponent implements OnInit {
   ngOnInit() {
     // console.log('note data',this.noteData);
   }
-  deleteNote(){
-    console.log("note delete");
+  
+  trashNote(){
+    console.log("note trash");
     
-    this.noteservice.putRequest("deletenotes?id="+this.noteData.id,'').subscribe(
+    this.noteservice.putRequest("notes/trash?id="+this.noteData.id,'').subscribe(
       (response:any)=>{
         if(response.statusCode===10){
           console.log()
@@ -36,5 +37,29 @@ export class AppIconComponent implements OnInit {
       }
     )
 
+  }
+
+  archive(){
+    console.log("Note Archive");
+    this.noteservice.putRequest("notes/archieve?id="+this.noteData.id,'').subscribe(
+      (response:any)=>{
+        if(response.statusCode===10){
+          console.log()
+          this.snackBar.open(
+            "Note moved to Archive",
+            "undo",
+            {duration:2500}
+          )
+
+        }else{
+          this.snackBar.open(
+            "Notes Archive  failed",
+            "undo",
+            {duration:2500}
+          )
+        }
+        
+      }
+    )
   }
 }
