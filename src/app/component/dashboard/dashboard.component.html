@@ -68,7 +68,7 @@
        
               </div>
               <div class="buttonNotes" style="margin:19px" fxLayoutAlign="center" >
-              <button  style="margin-left: -11px" matTooltip="Notes" style="background-color: whitesmoke;border-width: 0px;" >
+              <button   (click)="notes()" style="margin-left: -11px" matTooltip="Notes" style="background-color: whitesmoke;border-width: 0px;" >
                   <img src="https://img.icons8.com/color/36/000000/light-on.png">
                   <span>  Notes</span>
               </button>
@@ -79,7 +79,7 @@
               <mat-card style="border-radius: 72px">
                 <div class="buttonRemainder" style="margin:19px" fxLayoutAlign="center" > 
                 
-                <button  style="margin-left: 1px" matTooltip="Archive" style="background-color: whitesmoke;border-width: 0px;" >
+                <button (click)="archivebox()"  style="margin-left: 1px" matTooltip="Archive" style="background-color: whitesmoke;border-width: 0px;" >
                   <img src="https://img.icons8.com/color/36/000000/archive-folder.png">
                       <span>Archive</span>  
                   </button>

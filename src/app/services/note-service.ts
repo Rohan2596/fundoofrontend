@@ -24,6 +24,6 @@ export class NoteService{
     }
 
     public deleteRequest(url:any,data:any):any{
-        return this.http.put(this.baseurl+url,data,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
+        return this.http.post(this.baseurl+url,data,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
      }
 }

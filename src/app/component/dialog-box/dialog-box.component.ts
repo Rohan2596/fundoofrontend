@@ -28,7 +28,7 @@ id=this.data.noteId;
   
 
   onClose() {
-    console.log("note created");
+    console.log("note Udapted");
     this.note={
       'title':this.title.value,
       'description':this.description.value

@@ -1,6 +1,4 @@
-<div fxLayoutAlign="center center"><app-appnote></app-appnote></div>
-<div  ><app-pinned></app-pinned></div>
-<h3>Others</h3>
+
 <div style="margin: 20px" class="cardList">
  
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
@@ -9,16 +7,16 @@
 
 
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:12px">
-          <div (click)="openDialog(items)"
+          <div 
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
             {{items.title}}
-            <button  (click)="pin(items)"   matTooltip="pin" style="background-color: white;border-width: 0px;">
+            <button matTooltip="pin" style="background-color: white;border-width: 0px;">
 
               <img src="https://img.icons8.com/dusk/24/000000/pin.png">
             </button>
           </div>
         </div>
-        <div (click)="openDialog(items)"
+        <div 
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
           {{items.description}}</div>
 

@@ -28,4 +28,10 @@ login:Login=new Login()
     this.router.navigate(['/dashboard/trash']);
     
   }
+  archivebox(){
+    this.router.navigate(['/dashboard/archive']);
+  }
+  notes(){
+    this.router.navigate(['/dashboard/note'])
+  }
 }

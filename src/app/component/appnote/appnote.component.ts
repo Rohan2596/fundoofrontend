@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 @Component({
   selector: 'app-appnote',
   templateUrl: './appnote.component.html',
+
   styleUrls: ['./appnote.component.scss']
 })
 export class AppnoteComponent implements OnInit {

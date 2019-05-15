@@ -27,6 +27,8 @@ import { AppSocialComponent } from './component/app-social/app-social.component'
 import { NoteComponent } from './component/note/note.component';
 import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
 import { TrashBoxComponent } from './component/trash-box/trash-box.component';
+import { ArchiveBoxComponent } from './component/archive-box/archive-box.component';
+import { PinnedComponent } from './component/pinned/pinned.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { TrashBoxComponent } from './component/trash-box/trash-box.component';
     AppSocialComponent,
     NoteComponent,
     DialogBoxComponent,
-    TrashBoxComponent
+    TrashBoxComponent,
+    ArchiveBoxComponent,
+    PinnedComponent
   ],
   imports: [
     BrowserModule,
