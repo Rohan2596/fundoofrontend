@@ -52,6 +52,7 @@
 .mat-sidenav-container {
 
     display: flex;
+    position: fixed;
   
     
    
@@ -59,8 +60,12 @@
 }
 .mat-toolbar{
     height: 80px;
+   
+    
 }
-
+.mat-toolbar-row{
+    position: fixed
+}
 .bulbsimage{
     width: 44px;
     align-content: center;

@@ -25,6 +25,7 @@ note:any;
     }
   )
   }
+  
   perDelete(items){
     console.log("delete notes permanently");
     console.log("Delete"+items.id);
@@ -48,6 +49,29 @@ note:any;
             }
           )
     
+  }
+  onRestore(items){
+    console.log("notes restore");
+     console.log(items);
+    // console.log("Restore Notes"+items.id);
+    console.log()
+    this.noteservice.putRequest("notes/trash?id="+items.id,'').subscribe(
+      (response:any)=>{
+        if(response.statusCode===10){
+          this.snackBar.open("Notes Restored", "undo",
+          {duration:2500}
+          )
+          
+
+        }else{
+          this.snackBar.open(
+            "Notes restored FAILED",
+            "Undo",
+            )
+
+        }
+      }
+    )
   }
 
 

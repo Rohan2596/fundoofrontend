@@ -5,34 +5,27 @@
  
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
     <mat-card class="popdownCard" fxLayout="column" fxLayoutAlign="center center">
-      <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="start start">
 
 
-        <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:12px">
+        <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top:12px">
           <div (click)="openDialog(items)"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
-            {{items.title}}
-            <button  (click)="pin(items)"   matTooltip="pin" style="background-color: white;border-width: 0px;">
+            {{items.title}}</div>
+            <div>
+            <button  (click)="pin(items)"   matTooltip="pin" style="background-color: white;border-width: 0px;margin-left: 112px;
+    margin-top: -22px;">
 
               <img src="https://img.icons8.com/dusk/24/000000/pin.png">
             </button>
           </div>
         </div>
         <div (click)="openDialog(items)"
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;">
           {{items.description}}</div>
-
-
-
-
-
         <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>
-
-
-
-
       </div>
     </mat-card>
   </div>

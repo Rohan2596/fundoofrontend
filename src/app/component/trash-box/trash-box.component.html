@@ -32,7 +32,7 @@
         <div >
           <mat-menu #More="matMenu" >
 
-            <button mat-menu-item>Restore Note</button>
+            <button mat-menu-item (click)="onRestore(items)">Restore Note</button>
             <button mat-menu-item (click)="perDelete(items)">Delete Note</button>
 
           </mat-menu>

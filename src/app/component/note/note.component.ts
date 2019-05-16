@@ -12,7 +12,7 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-note:any[];
+ note:any[];
 data:any[];
   constructor(private snackBar:MatSnackBar,
     private noteservice:NoteService,
@@ -44,7 +44,7 @@ pin(items){
   console.log("pinned");
   this.noteservice.putRequest("notes/pin?id="+items.id,"").subscribe(
     (response:any)=>{
-      if(response==10){
+      if(response.statusCode==10){
         this.snackBar.open(
           "Note is pinned",
           "Undo"
