@@ -10,5 +10,12 @@
   }
   .cardList > *:not(:last-child) {
     margin-right: 32px;
-    margin-top: 13px
+    margin-top: 45px
+  }
+    .popdownCard{
+    min-height:80px;
+    width:320px;
+  }
+  .Pinned{
+    position:center
   }

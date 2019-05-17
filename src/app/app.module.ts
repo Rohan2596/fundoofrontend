@@ -29,7 +29,8 @@ import { DialogBoxComponent } from './component/dialog-box/dialog-box.component'
 import { TrashBoxComponent } from './component/trash-box/trash-box.component';
 import { ArchiveBoxComponent } from './component/archive-box/archive-box.component';
 import { PinnedComponent } from './component/pinned/pinned.component';
-import { LabelComponent } from './label/label.component';
+import { LabelComponent } from './component/label/label.component';
+import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LabelComponent } from './label/label.component';
     TrashBoxComponent,
     ArchiveBoxComponent,
     PinnedComponent,
-    LabelComponent
+    LabelComponent,
+    DialogLabelComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,8 @@ import { NoteComponent } from "./component/note/note.component";
 import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
 import { TrashBoxComponent } from './component/trash-box/trash-box.component';
 import { ArchiveBoxComponent } from './component/archive-box/archive-box.component';
-import { LabelComponent } from './label/label.component';
+import { LabelComponent } from './component/label/label.component';
+import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 const routes: Routes = [
   {
     path: ' ', redirectTo: 'login', pathMatch: 'full'
@@ -88,7 +89,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  entryComponents: [
+    DialogLabelComponent
+  ],
 })
 export class AppRoutingModule {
 }

@@ -1,0 +1,17 @@
+
+ <div class=".matcard" >
+<mat-card-title class=".labeltitle">
+            <span>Labels</span>
+            <div *ngFor="let items of label">
+            <div>{{items.labelName}}</div>
+            <!-- <button >{{items.labelName}}</button> -->
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start" >
+                <button class="editbuttons" (click)="opendialogLabel()">
+                        <img src="https://img.icons8.com/bubbles/36/000000/edit.png">
+                 Edit Labels
+                </button>
+            </div>
+</mat-card-title>
+
+</div>

@@ -1,20 +1,21 @@
-<h3>Pinned</h3>
-<div style="margin: 20px" class="cardList">
+<h3 class="Pinned">Pinned</h3>
+<div  class="cardList">
 
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
-    <mat-card class="popdownCard" fxLayout="column" fxLayoutAlign="center center">
-      <div fxLayout="column" fxLayoutAlign="center center">
-
-
-        <div fxLayout="row" fxLayoutAlign="space-around start" style="margin-top:12px">
-          <div (click)="openDialog(items)"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
-            {{items.title}}</div>
-          <div><button (click)="unpinned(items)" matTooltip="pin"
-              style="background-color: white;border-width: 0px;margin-top: -13px;margin-left: 125px;">
+    <mat-card class="popdownCard" >
+      <div fxLayout="column" fxLayoutAlign="start">
+  <div fxLayout="row" fxLayoutAlign="end start">
+  <button (click)="unpinned(items)" matTooltip="pin"
+              style="background-color: white;border-width: 0px;margin-top: -10px;margin-left: 10px;">
 
               <img src="https://img.icons8.com/dusk/24/000000/unpin-2.png">
             </button></div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="2px" style="margin-top:12px">
+          <div (click)="openDialog(items)"
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 25px;margin-top:-12px">
+            {{items.title}}</div>
+        
         </div>
         <div (click)="openDialog(items)"
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;">
@@ -22,9 +23,12 @@
 
 
 
-
+ </div>
 
         <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>
-      </div>
+</mat-card>
+  </div>
+</div>
+     
