@@ -10,28 +10,24 @@ import { DialogLabelComponent } from "./../dialog-label/dialog-label.component";
 })
 export class LabelComponent implements OnInit {
 label:any[]
-  constructor(private labelsService:LabelService,private snackBar:MatSnackBar,private dialog:MatDialog) { }
+data:any[]
+  constructor(private labelsService:LabelService,
+    private snackBar:MatSnackBar,
+    private dialog:MatDialog) { }
 
   ngOnInit() {
     console.log("labels created")
     this.labelsService.getRequest("getlabels").subscribe(
     (response:any)=>{
       this.label=response,
-      console.log(response)
-      this.snackBar.open(
-        "Labels ",
-        "undo",
-        {duration:2500}
-      )}
+      console.log(this.label,"gdfgdsgsd")
+     }
 
     )
   }
-  opendialogLabel(items:any):void{
+  opendialogLabel():void{
     
-    const dialogRef=this.dialog.open(DialogLabelComponent,
-       {  height: '400px',
-       width: '250px', }
-      );
+    const dialogRef=this.dialog.open(DialogLabelComponent);
       dialogRef.afterClosed().subscribe(result=>{
         console.log('dialog labels')
       });

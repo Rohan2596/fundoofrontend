@@ -1,22 +1,41 @@
-<div fxLayout="column" fxLayoutAlign="start start">
+<div class="dialoglabel" fxLayout="column" fxLayoutAlign=" start"> 
   <div>
    <h4>Edit Labels</h4>
   </div>
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign=" start" > 
+  
   <div>
-    <button style="border: 0px;background-color: white;margin-left: -24px">
+    <button (click)="clear(items)" style="border: 0px;background-color: white;margin-left: -20px">
       <img src="https://img.icons8.com/bubbles/36/000000/cancel.png"></button>
   </div>
   <div>
-<input matInput type="text" placeholder="Create label" style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px;width:155px;margin-top:5px">
+<input matInput   [(ngModel)]="labels.labelName"  type="text" placeholder="Create label" style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px;width:155px;margin-top:5px">
   </div>
   <div>
-      <button style="border: 0px;background-color: white">
+      <button (click)="createlabel(items)" style="border: 0px;background-color: white">
           <img src="https://img.icons8.com/bubbles/36/000000/checked.png"></button>
     </div>
-  <div>
-
-  <div fxLayout="column">
-    <button>Done</button>
   </div>
+  <div *ngFor="let items of label" fxLayout="row" fxLayoutAlign="center center">
+
+  <div>
+      <button (click)="delete(items)" style="border: 0px;background-color: white;margin-left: -20px">
+          <img src="https://img.icons8.com/clouds/36/000000/trash.png"></button>
+    </div>
+  <div >
+    <mat-form-field class="example-full-width">
+          <input matInput type="text"    value={{items.labelName}} [formControl]="labelName">
+        </mat-form-field>
+      </div>
+      <div>
+          <button (click)="update(items)" style="border: 0px;background-color: white;margin-left: -20px">
+              <img src="https://img.icons8.com/clouds/36/000000/edit.png"></button>
+        </div>
+  </div>
+
+  <div> 
+      <button mat-button>Done</button>
+    </div>
 </div>
+  
+

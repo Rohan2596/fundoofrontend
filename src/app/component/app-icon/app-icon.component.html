@@ -1,3 +1,13 @@
+<div>
+  <div >
+      <mat-chip-list >
+
+         
+          <mat-chip color="accent" selected>pgfjhvf</mat-chip>
+        </mat-chip-list>
+        
+    <div>
+</div>
 <div fxLayout="row" fxLayoutAlign="space-between center">
 
   <div>
@@ -42,10 +52,19 @@
 </div>
 <div>
   <mat-menu #More="matMenu">
-      <button mat-menu-item>Add label</button>
+      <button mat-menu-item  [matMenuTriggerFor]="label"  >Add label</button>
   <button mat-menu-item >Change label</button>
   <button (click)="trashNote()" mat-menu-item >Delete Note</button>
   
+  </mat-menu>
+</div>
+<div>
+  <mat-menu #label="matMenu">
+    <div>Label note</div>
+         <div *ngFor="let labels of alllabel">
+          <mat-checkbox   (click)="addLabelToNote(labels)"   class="addlabel">{{labels.labelName}}</mat-checkbox>
+     
+      </div> 
   </mat-menu>
 </div>
 

@@ -1,31 +1,31 @@
 <h3 class="Pinned">Pinned</h3>
-<div  class="cardList">
+<div  fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
 
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
     <mat-card class="popdownCard" >
       <div fxLayout="column" fxLayoutAlign="start">
-  <div fxLayout="row" fxLayoutAlign="end start">
+  <div  fxLayout="row" fxLayoutAlign="end start">
   <button (click)="unpinned(items)" matTooltip="pin"
-              style="background-color: white;border-width: 0px;margin-top: -10px;margin-left: 10px;">
+              style="background-color: white;border-width: 0px;margin-top: -10px;margin-left: 10px;width: 30%">
 
               <img src="https://img.icons8.com/dusk/24/000000/unpin-2.png">
             </button></div>
 
-        <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="2px" style="margin-top:12px">
+        <div style="width: 235px;word-wrap: break-word;" >
           <div (click)="openDialog(items)"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 25px;margin-top:-12px">
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:-12px">
             {{items.title}}</div>
         
         </div>
         <div (click)="openDialog(items)"
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;">
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px;">
           {{items.description}}</div>
 
 
 
  </div>
 
-        <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
+        <div class="appiconp" fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>
 </mat-card>

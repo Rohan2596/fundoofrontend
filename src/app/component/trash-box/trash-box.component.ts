@@ -29,7 +29,7 @@ note:any;
   perDelete(items){
     console.log("delete notes permanently");
     console.log("Delete"+items.id);
-    this.noteservice.deleteRequest("deletenotes?id="+items.id,'').subscribe(
+    this.noteservice.deleteRequest("deletenotes?id="+items.id).subscribe(
       (response:any)=>{
               if(response.statusCode===10){
                 console.log()

@@ -1,10 +1,10 @@
 <div fxLayoutAlign="center center"><app-appnote></app-appnote></div>
 <div  ><app-pinned></app-pinned></div>
 <h3 class="Others">Others</h3>
-<div style="margin: 20px" class="cardList">
+<div  fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
  
-  <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
-    <mat-card class="popdownCard" fxLayout="column" fxLayoutAlign="center center">
+  <div *ngFor="let items of note" fxLayoutAlign="space-around center" >
+    <mat-card class="popdownCard" style="width:235px;border-radius:8%;margin-left:10px">
       <div fxLayout="column" fxLayoutAlign="start">
  <div  fxLayout="row" fxLayoutAlign="end start" >
             <button  (click)="pin(items)"   matTooltip="pin" style="background-color: white;border-width: 0px;margin-right: 10px;
@@ -14,14 +14,14 @@
             </button>
           </div>
 
-        <div fxLayout="row wrap" fxLayoutAlign="space-between start" style="margin-top:12px">
+        <div style="width: 235px;word-wrap: break-word;">
           <div (click)="openDialog(items)"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:-12px">
             {{items.title}}</div>
            
         </div>
-        <div (click)="openDialog(items)"
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px;">
+        <div (click)="openDialog(items)" 
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px;width: 235px;word-wrap: break-word;">
           {{items.description}}</div>
           </div>
         <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="20px" class="appicon">

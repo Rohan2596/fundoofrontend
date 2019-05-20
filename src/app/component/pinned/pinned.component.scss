@@ -13,9 +13,19 @@
     margin-top: 45px
   }
     .popdownCard{
-    min-height:80px;
-    width:320px;
+      width:235px;
+      border-radius:8%;
+      margin-left:10px
   }
   .Pinned{
     position:center
   }
+  mat-card:hover{
+    .appiconp{
+      visibility:visible
+    }
+      }
+    .appiconp{
+      visibility:hidden
+    
+    }

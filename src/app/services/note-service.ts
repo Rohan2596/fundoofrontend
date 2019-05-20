@@ -23,7 +23,7 @@ export class NoteService{
        return this.http.put(this.baseurl+url,data,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
     }
 
-    public deleteRequest(url:any,data:any):any{
-        return this.http.post(this.baseurl+url,data,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
+    public deleteRequest(url:any):any{
+        return this.http.delete(this.baseurl+url,{headers:new HttpHeaders().set('token',localStorage.getItem('token'))});
      }
 }

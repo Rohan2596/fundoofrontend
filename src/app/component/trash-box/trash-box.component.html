@@ -1,36 +1,25 @@
-<div style="margin: 20px" class="cardList">
-  <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
-    <mat-card class="popdownCard" fxLayout="column" fxLayoutAlign="center center">
-      <div fxLayout="column" fxLayoutAlign="center center">
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" style="margin-top: 20px">
+  <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px" >
+    <mat-card class="popdownCard" style="width:235px;border-radius:8%;margin-left:10px">
+      <div fxLayout="column" fxLayoutAlign="start">
 
 
-        <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:12px">
+        
           <div
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:-10px">
             {{items.title}}
-            <button matTooltip="pin" style="background-color: white;border-width: 0px;">
-
-              <img src="https://img.icons8.com/dusk/24/000000/pin.png">
-            </button>
           </div>
-        </div>
-        <div 
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
+        <div
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px">
           {{items.description}}</div>
-
-
-
-
-
-
         <div>
           <button class="buttonApps" matTooltip="More" [matMenuTriggerFor]="More"
             style="background-color: white;border-width: 0px;">
             <img src="https://img.icons8.com/bubbles/24/000000/menu-2.png">
           </button>
         </div>
-        <div >
-          <mat-menu #More="matMenu" >
+        <div>
+          <mat-menu #More="matMenu">
 
             <button mat-menu-item (click)="onRestore(items)">Restore Note</button>
             <button mat-menu-item (click)="perDelete(items)">Delete Note</button>

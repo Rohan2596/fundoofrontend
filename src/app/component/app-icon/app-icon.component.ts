@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { NoteService } from "src/app/services/note-service";
+import {LabelService  } from "src/app/services/label-service";
 @Component({
   selector: 'app-app-icon',
   templateUrl: './app-icon.component.html',
@@ -8,10 +9,27 @@ import { NoteService } from "src/app/services/note-service";
 })
 export class AppIconComponent implements OnInit {
 @Input() noteData:any;
-  constructor(private snackBar:MatSnackBar,private  noteservice:NoteService  ) { }
+alllabel:any[];
+labelofnote:any[];
+  constructor(private snackBar:MatSnackBar,private  noteservice:NoteService,private labelsService :LabelService) { }
 
   ngOnInit() {
     // console.log('note data',this.noteData);
+    this.labelsService.getRequest("getlabels").subscribe(
+      (response:any)=>{
+       this.alllabel=response;
+      console.log( this.alllabel)
+      }
+    )
+// labelof note
+this.labelsService.getRequest("getlabelsOfNotes?id="+this.noteData.id).subscribe(
+  (response:any)=>{
+    
+    this.labelofnote=response;
+    console.log(this.labelofnote);
+  }
+)
+
   }
   
   trashNote(){
@@ -62,4 +80,18 @@ export class AppIconComponent implements OnInit {
       }
     )
   }
+  addLabelToNote(labels){
+    console.log(labels.labelId,this.noteData.id)
+    this.labelsService.putRequest("labels/addnote?labelid="+ labels.labelId + "&noteid="+ this.noteData.id,"").subscribe(
+   
+        (response:any)=>{
+          if(response.statusCode==11){
+            this.snackBar.open("label added","undo",{duration:2500})
+          }else{
+            this.snackBar.open("labels addition FAILED","undo",{duration:2500})
+          }
+        }
+    
+    )}
+
 }

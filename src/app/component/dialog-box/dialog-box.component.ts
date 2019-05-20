@@ -21,7 +21,6 @@ note:any;
 title=new FormControl(this.data.title);
 description=new FormControl(this.data.description);
 id=this.data.noteId;
-
   ngOnInit() {
 
   }

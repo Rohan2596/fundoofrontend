@@ -5,8 +5,8 @@
    
       <div fxLayout="row" fxLayoutAlign="space-between center">
        
-        <div style="    border-width: 0px;">
-          <input matInput type="text" placeholder="Take a Note..."
+        <div style="border-width: 0px;">
+          <input matInput type="text" placeholder="Take a Note..." class="input"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;    border-width: 0px;" />
         </div>
         <div fxLayout="row" fxLayoutAlign="end center">
@@ -27,8 +27,6 @@
           </button>
 
         </div>
-
-
       </div>
     </mat-card>
   </div>
@@ -41,7 +39,7 @@
         
 
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px;border-width: 0px">
-          <input matInput type="text" placeholder="Title" [(ngModel)]="note.title"
+          <input class="input" matInput type="text" placeholder="Title" [(ngModel)]="note.title"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px;" />
             <button matTooltip="pin" style="background-color: white;border-width: 0px;">
     
@@ -52,7 +50,7 @@
 
 
         <div style="margin-top:15px;border-width: 0px">
-          <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
+          <textarea  class="input"   matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 270px;    border-width: 0px;"></textarea>
         </div>
 
@@ -65,9 +63,6 @@
             <img src="https://img.icons8.com/color/24/000000/cancel.png">
           </button>
         </div>
-
-
-
 
       </div>
     </mat-card>
