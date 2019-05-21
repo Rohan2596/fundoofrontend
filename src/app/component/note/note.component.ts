@@ -25,7 +25,7 @@ ngOnInit() {
 console.log("note created");
 this.noteservice.getRequest("getnotes").subscribe(
   (response: any) => {
- this.note=response,
+ this.note=response
  console.log(response)
   })                  
   }

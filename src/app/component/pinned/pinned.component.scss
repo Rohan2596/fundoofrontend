@@ -1,24 +1,17 @@
-.cardList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  /* Column Gap */
-  .cardList > * {
-    box-sizing: border-box;
-  }
-  .cardList > *:not(:last-child) {
-    margin-right: 32px;
-    margin-top: 45px
-  }
+
     .popdownCard{
-      width:235px;
+     
       border-radius:8%;
-      margin-left:10px
+      margin-left:10px;
+      min-height:80px;
+      width:320px;
   }
   .Pinned{
-    position:center
+    margin-left: 28%;
+    margin-top:2%;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: normal;
+    font-size: 11px
   }
   mat-card:hover{
     .appiconp{
@@ -28,4 +21,8 @@
     .appiconp{
       visibility:hidden
     
+    }
+    .app-label-display{
+      margin-top: 8px;
+      margin-bottom: 8px;
     }

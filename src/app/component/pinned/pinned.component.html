@@ -1,4 +1,4 @@
-<h3 class="Pinned">Pinned</h3>
+<div><h3 class="Pinned">PINNED</h3></div>
 <div  fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
 
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" fxLayoutGap="2px">
@@ -18,16 +18,19 @@
         
         </div>
         <div (click)="openDialog(items)"
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px;">
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:10px;">
           {{items.description}}</div>
 
 
 
  </div>
-
+ <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px" class="app-label-display">
+    <app-label-display [noteData]="items" ></app-label-display>
+  </div>
         <div class="appiconp" fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="10px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>
+          
 </mat-card>
   </div>
 </div>

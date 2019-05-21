@@ -31,6 +31,7 @@ import { ArchiveBoxComponent } from './component/archive-box/archive-box.compone
 import { PinnedComponent } from './component/pinned/pinned.component';
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
+import { LabelDisplayComponent } from './component/label-display/label-display.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DialogLabelComponent } from './component/dialog-label/dialog-label.comp
     ArchiveBoxComponent,
     PinnedComponent,
     LabelComponent,
-    DialogLabelComponent
+    DialogLabelComponent,
+    LabelDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<div>
+  <div>
+      <mat-chip-list  >
+
+         <div class="mat-chip">
+          <mat-chip  style="background-color:whitesmoke;text-align: center;"  *ngFor="let items of labelofnote">{{items.labelName}}
+              <button class="remove" (click)="remove(items)" mat-button><img src="https://img.icons8.com/color/12/000000/cancel.png"></button>
+        </mat-chip>
+     </div>
+        </mat-chip-list>
+      
+    <div>
+</div>

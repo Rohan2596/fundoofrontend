@@ -1,12 +1,13 @@
 <div>
-  <div >
+  <!-- <div >
       <mat-chip-list >
 
          
-          <mat-chip color="accent" selected>pgfjhvf</mat-chip>
+          <mat-chip *ngFor="let items of labelofnote"  color="accent" selected>{{items.labelName}}</mat-chip>
         </mat-chip-list>
         
     <div>
+      <app-label-display [noteData]="items" ></app-label-display> -->
 </div>
 <div fxLayout="row" fxLayoutAlign="space-between center">
 
