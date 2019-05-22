@@ -1,11 +1,35 @@
-.matcard{
-    border-bottom-width: 2px;
-    border-radius: 72px;
-}
-.editbuttons{
-    background-color: whitesmoke;
+// .matcard{
+//     border-bottom-width: 2px;
+//     border-radius: 72px;
+// }
+
+.iconimage{
+ 
     border-width: 0px;
-    align-content: center;
+    width:40%;
+    float:left;
+    margin-left:34px;
+    font-family:Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    letter-spacing: .01785714em;
+}
+.iconname{
+    font-family:Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    letter-spacing: .01785714em;
+    width:60%;
+    float:left;
     margin-left: -12px
-    
+}
+.labels1:hover{
+    background-color: lightgray;
+    border-radius: 50px 50px;
+}
+.labels1:focus{
+    background-color:yellowgreen;
+
 }

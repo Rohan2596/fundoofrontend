@@ -16,12 +16,12 @@
 
         <div style="width: 235px;word-wrap: break-word;">
           <div (click)="openDialog(items)"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:-12px">
-            {{items.title}}</div>
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
+            {{items.title |uppercase}}</div>
            
         </div>
         <div (click)="openDialog(items)" 
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 10px;margin-top:8px;width: 235px;word-wrap: break-word;">
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;width: 235px;word-wrap: break-word;">
           {{items.description}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px" class="app-label-display">

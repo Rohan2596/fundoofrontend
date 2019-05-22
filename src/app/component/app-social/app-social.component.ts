@@ -13,13 +13,13 @@ export class AppSocialComponent implements OnInit {
   ngOnInit() {
   }
   onFacebook(){
-    this.router.navigate(['https://en-gb.facebook.com/login/'])
+    this.router.navigate(['https://en-gb.facebook.com/'])
   }
   ontwitter(){
-    this.router.navigate(['https://twitter.com/login'])
+    this.router.navigate(['https://twitter.com/'])
   }
   onlinkedin(){
-    this.router.navigate(['https://www.linkedin.com/uas/login'])
+    this.router.navigate(['https://www.linkedin.com/'])
   }
   onGoogleplus(){
     this.router.navigate([''])

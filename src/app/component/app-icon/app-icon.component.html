@@ -46,9 +46,14 @@
 
 <div>
   <mat-menu #colorplatte="matMenu">
-    <mat-card>
+    <div  fxLayout="row" fxLayoutAlign=" start" *ngFor='let color of arrayOfColors'>
+      <div *ngFor='let notecolors of color'>
+          <button [ngStyle]="{'background-color':notecolors.hexcode}"  (click)="setcolors(notecolors.name)" mat-mini-fab></button>
 
-    </mat-card>
+      </div>
+    </div>
+
+
   </mat-menu>
 </div>
 <div>

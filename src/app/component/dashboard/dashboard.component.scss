@@ -74,3 +74,30 @@
     margin-right: -2px;
     margin-top: 1px
 }
+.iconimage{
+
+    border-width: 0px;
+    width:50%;
+    display: flex;
+    margin-left:10px
+}
+.iconname{
+  
+    width:50%;
+    display: flex;
+    margin-top:14px
+}
+.label
+{
+    margin-left: 20%;
+}
+.notes{
+    width:95%;
+}
+.notes:hover{
+    background-color: lightgray;
+    border-radius: 50px 50px;
+}
+.notes:focus-visible{
+    background-color: yellow
+}
