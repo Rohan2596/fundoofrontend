@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar  } from "@angular/material";
 import { NoteService } from "../../services/note-service";
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-archive-box',
   templateUrl: './archive-box.component.html',
@@ -8,18 +9,28 @@ import { NoteService } from "../../services/note-service";
 })
 export class ArchiveBoxComponent implements OnInit {
 note:any;  
-
-constructor(private snackbar:MatSnackBar,private noteService:NoteService) { }
+message:any;
+constructor(private snackbar:MatSnackBar,
+  private noteService:NoteService,
+  private dataService:DataService) { }
 
   ngOnInit() {
-
-    console.log("Arcieve notes");
-  this.noteService.getRequest("getarchivenotes").subscribe(
+  this.getarchive();
+  this.dataService.currentMessage.subscribe(
     (response:any)=>{
-      this.note=response,
-      console.log(response)
+      this.message=response;
+      this.getarchive();
     }
   )
+  }
+  getarchive(){
+    console.log("Arcieve notes");
+    this.noteService.getRequest("getarchivenotes").subscribe(
+      (response:any)=>{
+        this.note=response,
+        console.log(response)
+      }
+    ) 
   }
 
 }

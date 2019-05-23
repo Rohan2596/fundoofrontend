@@ -32,6 +32,7 @@ import { PinnedComponent } from './component/pinned/pinned.component';
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { LabelDisplayComponent } from './component/label-display/label-display.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { LabelDisplayComponent } from './component/label-display/label-display.c
     
    
   ],
-  providers: [], 
+  providers: [DataService], 
   bootstrap: [AppComponent],
   entryComponents:[DialogBoxComponent]
 })

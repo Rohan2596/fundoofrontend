@@ -4,6 +4,7 @@ import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-appnote',
   templateUrl: './appnote.component.html',
@@ -13,8 +14,10 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class AppnoteComponent implements OnInit {
   private popup: boolean;
   note: Notes = new Notes();
- 
-  constructor(private snackBar: MatSnackBar, private noteservice: NoteService,public fromBuilder:FormBuilder) { }
+ message:any;
+  constructor(private snackBar: MatSnackBar,
+    private dataService:DataService, 
+    private noteservice: NoteService,public fromBuilder:FormBuilder) { }
 
   ngOnInit() {
 
@@ -30,6 +33,7 @@ export class AppnoteComponent implements OnInit {
       (response: any) => {
         if (response.statusCode === 10) {
           console.log(response);
+          this.dataService.changeMessage('notes creation');
           this.snackBar.open(
             "Notes Created",
             "undo",

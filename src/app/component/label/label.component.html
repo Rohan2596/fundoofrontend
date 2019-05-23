@@ -1,26 +1,24 @@
+<div>
 
- <div class=".matcard" >
-<mat-card-title class=".labeltitle">
         <!-- <div class="iconname" style="margin-left: 12px;margin-top: 5px">LABELS</div> -->
-       <div >
-            <div class="labels1"  *ngFor="let labels of label" fxLayout="row" fxLayoutAlign="space-between center" >
-                    <div  class="iconimage">
-                            <img src="https://img.icons8.com/bubbles/24/000000/right.png">
-                      
-                  </div>
-                  <div class="iconname" matTooltip="{{labels.labelName}}">{{labels.labelName}}</div>
-                  </div>
+        <div class=".matcard">
+                <div class="labels1" *ngFor="let labels of label" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div class="iconimage">
+                                <img src="https://img.icons8.com/bubbles/24/000000/right.png">
+
+                        </div>
+                        <div class="iconname" matTooltip="{{labels.labelName}}">{{labels.labelName}}</div>
+                </div>
+
+        </div>
+        <div class="labels1" (click)="opendialogLabel()" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="iconimage" matTooltip="Edit">
+                        <img src="https://img.icons8.com/bubbles/36/000000/edit.png">
+
+                </div>
+                <div class="iconname">Edit Labels</div>
+        </div>
+
+
 
 </div>
-            <div  class="labels1" (click)="opendialogLabel()" fxLayout="row" fxLayoutAlign="space-between center" >
-                    <div  class="iconimage"    matTooltip="Edit">
-                            <img src="https://img.icons8.com/bubbles/36/000000/edit.png">
-                      
-                  </div>
-                  <div class="iconname">Edit Labels</div>
-                  </div>
-            
-</mat-card-title>
-
-</div>
-

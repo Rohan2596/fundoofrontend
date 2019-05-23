@@ -4,6 +4,7 @@ import { NoteService } from "../../services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { FormControl } from "@angular/forms";
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class DialogBoxComponent implements OnInit {
   @Input() noteData:any;
 
   constructor(private snackBar:MatSnackBar,
+    private dataservice:DataService,
     private noteservice:NoteService,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 note:any;
@@ -37,6 +39,7 @@ id=this.data.noteId;
       (response: any) => {
         if (response.statusCode === 10) {
           console.log(response);
+          this.dataservice.changeMessage('notes'),
           this.snackBar.open(
             "Notes Created",
             "undo",

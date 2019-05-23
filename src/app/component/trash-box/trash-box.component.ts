@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material";
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-trash-box',
   templateUrl: './trash-box.component.html',
@@ -9,30 +10,45 @@ import { MatSnackBar } from "@angular/material";
 export class TrashBoxComponent implements OnInit {
 notes:any[];
 note:any;
+message:any;
 @Input() noteData:any;
   constructor(private snackBar:MatSnackBar,
     private noteservice:NoteService,
-    
+    private dataService:DataService
     ) { }
 
   ngOnInit() {
 
+this.gettrash();
+this.dataService.currentMessage.subscribe(
+  (response:any)=>{
+    this.message=response;
+    this.gettrash();
+
+  }
+)
+  
+  }
+  
+gettrash(){
   console.log("trash notes");
   this.noteservice.getRequest("gettrashnotes").subscribe(
     (response:any)=>{
       this.note=response,
+      
       console.log(response)
     }
   )
-  }
-  
+}
+
   perDelete(items){
     console.log("delete notes permanently");
     console.log("Delete"+items.id);
     this.noteservice.deleteRequest("deletenotes?id="+items.id).subscribe(
       (response:any)=>{
               if(response.statusCode===10){
-                console.log()
+                console.log();
+                this.dataService.changeMessage("Detele permantly");
                 this.snackBar.open(
                   "Note moved to trash",
                   "undo",
@@ -58,6 +74,7 @@ note:any;
     this.noteservice.putRequest("notes/trash?id="+items.id,'').subscribe(
       (response:any)=>{
         if(response.statusCode===10){
+          this.dataService.changeMessage("Restore");
           this.snackBar.open("Notes Restored", "undo",
           {duration:2500}
           )

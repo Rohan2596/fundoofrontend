@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { NoteService } from "src/app/services/note-service";
 import { LabelService } from "src/app/services/label-service";
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-app-icon',
   templateUrl: './app-icon.component.html',
@@ -12,6 +13,7 @@ export class AppIconComponent implements OnInit {
   // @Output() colorChange:new EventEmitter();
   alllabel: any[];
   labelofnote: any[];
+  message:any;
   arrayOfColors = [
     [
     { name: "white",hexcode: "#ffffff" },
@@ -32,28 +34,52 @@ export class AppIconComponent implements OnInit {
     { name: "gray", hexcode: "#808080" }
     ]
     ]
-  constructor(private snackBar: MatSnackBar, private noteservice: NoteService, private labelsService: LabelService) { }
+  constructor(private snackBar: MatSnackBar, 
+    private noteservice: NoteService, 
+    private labelsService: LabelService,
+    private dataService:DataService) { }
   
 
 
   ngOnInit() {
-    // console.log('note data',this.noteData);
-    this.labelsService.getRequest("getlabels").subscribe(
-      (response: any) => {
-        this.alllabel = response;
-        console.log(this.alllabel)
-      }
-    )
-    // labelof note
-    this.labelsService.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
-      (response: any) => {
-
-        this.labelofnote = response;
-        console.log(this.labelofnote);
-      }
-    )
+    
+  this.getalllabels();
+  this.getAllNoteLabel();
+  
 
   }
+
+getalllabels(){
+  console.log('note data',this.alllabel);
+  this.labelsService.getRequest("getlabels").subscribe(
+    (response: any) => {
+      this.alllabel = response;
+    
+      // console.log(this.alllabel)
+    }
+  )
+}
+
+
+
+getAllNoteLabel(){
+  this.labelsService.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
+    (response: any) => {
+
+      this.labelofnote = response;
+
+
+      console.log(this.labelofnote);
+    }
+  )
+}
+
+
+
+
+
+
+
 
   trashNote() {
     console.log("note trash");
@@ -61,7 +87,7 @@ export class AppIconComponent implements OnInit {
     this.noteservice.putRequest("notes/trash?id=" + this.noteData.id, '').subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
-          console.log()
+          this.dataService.changeMessage("trashNotes")
           this.snackBar.open(
             "Note moved to trash",
             "undo",
@@ -85,7 +111,7 @@ export class AppIconComponent implements OnInit {
     this.noteservice.putRequest("notes/archieve?id=" + this.noteData.id, '').subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
-          console.log()
+this.dataService.changeMessage("archive notes")
           this.snackBar.open(
             "Note moved to Archive",
             "undo",
@@ -109,7 +135,10 @@ export class AppIconComponent implements OnInit {
 
       (response: any) => {
         if (response.statusCode == 11) {
+       
           this.snackBar.open("label added", "undo", { duration: 2500 })
+          this.dataService.changeMessage('add labels');
+
         } else {
           this.snackBar.open("labels addition FAILED", "undo", { duration: 2500 })
         }

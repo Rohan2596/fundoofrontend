@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from 'src/app/services/note-service';
 import { MatSnackBar } from '@angular/material';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-label-display',
@@ -10,7 +11,9 @@ import { MatSnackBar } from '@angular/material';
 export class LabelDisplayComponent implements OnInit {
   @Input() noteData: any;
   labelofnote: any[];
-  constructor(private noteservice:NoteService,private snackBar:MatSnackBar) { }
+  constructor(private noteservice:NoteService,
+    private snackBar:MatSnackBar,
+    private dataService:DataService) { }
 
   ngOnInit() {
     this.noteservice.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
@@ -27,6 +30,7 @@ export class LabelDisplayComponent implements OnInit {
     this.noteservice.putRequest("notes/removeNotetolabel?labelid="+  items.labelId  +"&noteid="+this.noteData.id,"").subscribe(
       (response:any)=>{
         if(response.statusCode==10){
+          this.dataService.changeMessage('remove labels')
           this.snackBar.open("labels removed","undo",{duration:2500})
         }else{
           this.snackBar.open("labels removed FAILED","undo",{duration:2500})

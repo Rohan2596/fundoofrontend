@@ -3,6 +3,7 @@ import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialog,} from "@angular/material";
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -14,20 +15,34 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 export class NoteComponent implements OnInit {
  note:any[];
 data:any[];
+  message: any;
   constructor(private snackBar:MatSnackBar,
     private noteservice:NoteService,
     private dialog:MatDialog,
+    private dataService:DataService
    
     ) { }
 
 ngOnInit() {
-  
-console.log("note created");
-this.noteservice.getRequest("getnotes").subscribe(
-  (response: any) => {
- this.note=response
- console.log(response)
-  })                  
+  this.getNote();
+    this.dataService.currentMessage.subscribe(
+   (response:any)=>{
+      this.message=response;
+      this.getNote();
+
+   }
+
+    )
+                
+  }
+
+
+  getNote(){
+    this.noteservice.getRequest("getnotes").subscribe(
+      (response: any) => {
+     this.note=response
+     console.log(response)
+      })  
   }
 openDialog(items:any):void{
   const dialogRef=this.dialog.open(DialogBoxComponent,{
@@ -45,6 +60,7 @@ pin(items){
   this.noteservice.putRequest("notes/pin?id="+items.id,"").subscribe(
     (response:any)=>{
       if(response.statusCode==10){
+        this.dataService.changeMessage("pinned notes");
         this.snackBar.open(
           "Note is pinned",
           "Undo"
