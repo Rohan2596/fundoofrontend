@@ -1,38 +1,32 @@
-.cardList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+
+    .popdownCard{
+     
+      border-radius:8%;
+      margin-left:10px;
+      min-height:80px;
+      width:320px;
   }
-  /* Column Gap */
-  .cardList > * {
-    box-sizing: border-box;
-  }
-  .cardList > *:not(:last-child) {
-    margin-right: 32px;
-    margin-top: 13px
-  }
-  .popdownCard{
-    min-height:80px;
-    width:320px;
+  .others{
+    margin-left: 28%;
+    margin-top:2%;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: normal;
+    font-size: 11px
   }
   mat-card:hover{
-.appicon{
-  visibility:visible
-}
-  }
-.appicon{
-  visibility:hidden
+    .appiconp{
+      visibility:visible
+    }
+      }
+    .appiconp{
+      visibility:hidden
+    
+    }
+    .app-label-display{
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
 
-}
-.others{
-  margin-left: 28%;
-  margin-top:2%;
-  font-family: Roboto,Arial,sans-serif;
-  font-weight: normal;
-  font-size: 11px
-}
-.app-label-display{
-  margin-top: 8px;
-  margin-bottom: 8px;
+.appiconp{
+  margin-left: -25px
 }

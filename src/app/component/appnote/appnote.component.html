@@ -36,22 +36,25 @@
     <mat-card *ngIf="popup" fxLayoutAlign="start center" class="popdownCard">
        
       <div flex=10 fxLayout="column" fxLayoutAlign="start start">
-        
+        <div  fxLayout="row" fxLayoutAlign="end start" >
+          <button mat-button  matTooltip="pin" style="border-width: 0px;margin-right: -427px;margin-top: -12px;">
+
+<img src="../../../assets/unpin.svg">
+          </button>
+        </div>
+
 
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px;border-width: 0px">
           <input class="input" matInput type="text" placeholder="Title" [(ngModel)]="note.title"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px;" />
-            <button matTooltip="pin" style="background-color: white;border-width: 0px;">
-    
-                <img src="https://img.icons8.com/dusk/24/000000/pin.png">
-              </button>
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px; width: 392px;" />
+        
         
           </div>
 
 
-        <div style="margin-top:15px;border-width: 0px">
-          <textarea  class="input"   matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 270px;    border-width: 0px;"></textarea>
+        <div style="margin-top:15px;border-width: 0px" class="input" >
+          <textarea    matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 423px;    border-width: 0px; outline-width: 0;"></textarea>
         </div>
 
 

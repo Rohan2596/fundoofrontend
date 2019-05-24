@@ -4,13 +4,13 @@
 <div  fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
     
   <div *ngFor="let items of note" fxLayoutAlign="space-around center" >
-    <mat-card class="popdownCard" style="width:235px;border-radius:8%;margin-left:10px">
+    <mat-card [ngStyle]="{'background-color':items.color}"  class="popdownCard" >
       <div fxLayout="column" fxLayoutAlign="start">
  <div  fxLayout="row" fxLayoutAlign="end start" >
-            <button  (click)="pin(items)"   matTooltip="pin" style="background-color: white;border-width: 0px;margin-right: 10px;
+            <button mat-button  (click)="pin(items)"     matTooltip="pin" style="border-width: 0px;margin-right: 10px;
     margin-top: -12px;">
 
-              <img src="https://img.icons8.com/wired/24/000000/unpin-2.png">
+<img src="../../../assets/unpin.svg">
             </button>
           </div>
 
@@ -24,15 +24,13 @@
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;width: 235px;word-wrap: break-word;">
           {{items.description}}</div>
           </div>
-          <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px" class="app-label-display">
+          <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px"  class="app-label-display">
               <app-label-display [noteData]="items" ></app-label-display>
             </div>
-        <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="20px" class="appicon">
-          <app-app-icon [noteData]="items"></app-app-icon>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="20px" class="appicon">
-           
-          </div>
+            <div class="appiconp" fxLayout="row" fxLayoutAlign="start center"  fxLayoutGap="2px">
+              <app-app-icon [noteData]="items"></app-app-icon>
+            </div>
+     
     </mat-card>
   </div>
 </div>

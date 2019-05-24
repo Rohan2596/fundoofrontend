@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar  } from "@angular/material";
 import { NoteService } from "../../services/note-service";
 import { DataService } from 'src/app/services/data.service';
+
 @Component({
   selector: 'app-archive-box',
   templateUrl: './archive-box.component.html',
@@ -31,6 +32,28 @@ constructor(private snackbar:MatSnackBar,
         console.log(response)
       }
     ) 
+  }
+
+  pin(items){
+    console.log("pinned");
+    this.noteService.putRequest("notes/pin?id="+items.id,"").subscribe(
+      (response:any)=>{
+        if(response.statusCode==10){
+          this.dataService.changeMessage("pinned notes");
+          this.snackbar.open(
+            "Note is pinned",
+            "Undo"
+          )
+  
+        }else{
+          this.snackbar.open(
+            "Note not pinned",
+            "undo"
+          )
+  
+        }
+      }
+    )
   }
 
 }

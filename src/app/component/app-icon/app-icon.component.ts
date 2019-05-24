@@ -60,12 +60,9 @@ getalllabels(){
   )
 }
 
-
-
 getAllNoteLabel(){
   this.labelsService.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
     (response: any) => {
-
       this.labelofnote = response;
 
 
@@ -76,12 +73,7 @@ getAllNoteLabel(){
 
 
 
-
-
-
-
-
-  trashNote() {
+trashNote() {
     console.log("note trash");
 
     this.noteservice.putRequest("notes/trash?id=" + this.noteData.id, '').subscribe(
@@ -153,6 +145,7 @@ this.dataService.changeMessage("archive notes")
 
       (response: any) => {
         if (response.statusCode == 10) {
+          this.dataService.changeMessage('add labels');
           this.snackBar.open("color added", "undo", { duration: 2500 })
         } else {
           this.snackBar.open("color addition FAILED", "undo", { duration: 2500 })

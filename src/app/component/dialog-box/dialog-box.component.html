@@ -2,21 +2,24 @@
   <mat-card  fxLayoutAlign="start center" class="popdownCard">
      
     <div flex=10 fxLayout="column" fxLayoutAlign="center center">
-      
+      <div  fxLayout="row" fxLayoutAlign="end start" >
+        <button mat-button  (click)="pin(items)"     matTooltip="pin" style="border-width: 0px;margin-right: -224px;
+margin-top: -12px;">
+
+<img src="../../../assets/unpin.svg">
+        </button>
+      </div>
 
       <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px">
-        <input matInput type="text" [formControl]="title"  
-        style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
-      
-        <button matTooltip="pin" style="background-color: white;border-width: 0px;">
-    
-          <img src="https://img.icons8.com/dusk/24/000000/pin.png">
-        </button></div>
+        <input matInput class="input"  type="text" [formControl]="title"  
+        style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px;width: 387px;border-width: 0px;">
+      </div>
+       
 
 
       <div style="margin-top:15px">
-        <textarea matInput type="text"  [formControl]="description"
-          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 270px;"></textarea>
+        <textarea  class="input" matInput type="text"  [formControl]="description"
+          style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 423px;border-width: 0px;"></textarea>
       </div>
 
 

@@ -9,37 +9,37 @@
     <div>
       <app-label-display [noteData]="items" ></app-label-display> -->
 </div>
-<div fxLayout="row" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutAlign="start center" > 
 
   <div>
-    <button  class="buttonApps" matTooltip="Remind me" style="background-color: white;border-width: 0px;" >
-      <img src="https://img.icons8.com/dusk/24/000000/add-reminder.png">
+    <button  mat-button class="buttonApps" matTooltip="Remind me" style="border-width: 0px;" >
+      <img src="../../../assets/remindme.svg">
     </button>
   </div>
   <div>
-    <button  class="buttonApps" matTooltip="Collabrator" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/color/24/000000/add-user-group-woman-man.png"> 
+    <button mat-button class="buttonApps" matTooltip="Collabrator" style="border-width: 0px;">
+      <img src="../../../assets/colabrator.svg">
     </button>
   </div>
   <div>
-    <button  class="buttonApps" matTooltip="Change Color" [matMenuTriggerFor]="colorplatte" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/office/24/000000/paint-palette.png">
+    <button mat-button  class="buttonApps" matTooltip="Change Color" [matMenuTriggerFor]="colorplatte" style=";border-width: 0px;">
+      <img src="../../../assets/colorplatte.svg">
     </button>
   </div>
   <div>
-    <button class="buttonApps" matTooltip="picture" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/doodle/24/000000/picture.png">
+    <button  mat-button class="buttonApps" matTooltip="picture" style="border-width: 0px;">
+      <img src="../../../assets/image.svg">
     </button>
   </div>
   <div>
-    <button  (click)="archive()" class="buttonApps" matTooltip="Archive" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/color/24/000000/archive-folder.png">
+    <button  mat-button (click)="archive()" class="buttonApps" matTooltip="Archive" style="border-width: 0px;">
+      <img src="../../../assets/archive.svg">
     </button>
   </div>
 
   <div>
-    <button  class="buttonApps" matTooltip="More" [matMenuTriggerFor]="More" style="background-color: white;border-width: 0px;">
-      <img src="https://img.icons8.com/bubbles/24/000000/menu-2.png">
+    <button  mat-button class="buttonApps" matTooltip="More" [matMenuTriggerFor]="More" style="border-width: 0px;">
+      <img src="../../../assets/vertmore.svg">
     </button>
   </div>
  
