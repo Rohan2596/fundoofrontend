@@ -1,10 +1,10 @@
 
     .popdownCard{
      
-      border-radius:8%;
+      border-radius:4%;
       margin-left:10px;
       min-height:80px;
-      width:320px;
+     max-width:90% ;
   }
   .others{
     margin-left: 28%;
@@ -26,7 +26,42 @@
       margin-top: 8px;
       margin-bottom: 8px;
     }
+    mat-card:hover{
+      .apppin{
+        visibility: visible;
+      }
+    }
+    .apppin{
+      visibility: hidden;}   
 
-.appiconp{
-  margin-left: -25px
+
+.apppin{
+
+  width: 42px;
+  height: 36px;
+  float: right;
+  width: 15%;
+
+}
+.title{
+float: left;
+width: 85%;
+  word-wrap: break-word;
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 15px;
+  margin-top:0px
+}
+.description{
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 10px;
+  margin-top:8px;
+  width: 80%;
+  word-wrap: break-word;
+}
+.main{
+  width: 90%;
 }

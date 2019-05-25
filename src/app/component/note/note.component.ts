@@ -1,7 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { NoteService } from "src/app/services/note-service";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { MatDialog,} from "@angular/material";
+import { MatDialog} from "@angular/material";
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 import { DataService } from 'src/app/services/data.service';
 

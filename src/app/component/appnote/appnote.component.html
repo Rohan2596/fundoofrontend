@@ -2,9 +2,9 @@
 
   <div>
     <mat-card *ngIf="!popup" (click)="onPopup()" class="popupCard">
-   
+
       <div fxLayout="row" fxLayoutAlign="space-between center">
-       
+
         <div style="border-width: 0px;">
           <input matInput type="text" placeholder="Take a Note..." class="input"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;    border-width: 0px;" />
@@ -34,12 +34,12 @@
 
   <div flex=100 fxLayoutAlign="center center" style="margin-top: 2%">
     <mat-card *ngIf="popup" fxLayoutAlign="start center" class="popdownCard">
-       
-      <div flex=10 fxLayout="column" fxLayoutAlign="start start">
-        <div  fxLayout="row" fxLayoutAlign="end start" >
-          <button mat-button  matTooltip="pin" style="border-width: 0px;margin-right: -427px;margin-top: -12px;">
 
-<img src="../../../assets/unpin.svg">
+      <div flex=10 fxLayout="column" fxLayoutAlign="start start">
+        <div fxLayout="row" fxLayoutAlign="end start">
+          <button mat-button matTooltip="pin" style="border-width: 0px;margin-right: -427px;margin-top: -12px;">
+
+            <img src="../../../assets/unpin.svg">
           </button>
         </div>
 
@@ -47,19 +47,19 @@
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px;border-width: 0px">
           <input class="input" matInput type="text" placeholder="Title" [(ngModel)]="note.title"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px; width: 392px;" />
-        
-        
-          </div>
 
 
-        <div style="margin-top:15px;border-width: 0px" class="input" >
-          <textarea    matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
+        </div>
+
+
+        <div style="margin-top:15px;border-width: 0px" class="input">
+          <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
             style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 423px;    border-width: 0px; outline-width: 0;"></textarea>
         </div>
 
 
         <div fxLayout="row" fxLayoutAlign="space-between end">
-          <app-app-icon ></app-app-icon>
+          <app-app-icon></app-app-icon>
           <button (click)="onClose()" (click)="popup" matTooltip="Close the note"
             style="border-width: 0px;background: white;margin-top: 9px;margin-left: 28px">
 

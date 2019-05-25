@@ -32,6 +32,8 @@ import { PinnedComponent } from './component/pinned/pinned.component';
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { LabelDisplayComponent } from './component/label-display/label-display.component';
+import{DialogProfileComponent} from './component/dialog-profile/dialog-profile.component';
+
 import { DataService } from './services/data.service';
 
 @NgModule({
@@ -52,7 +54,8 @@ import { DataService } from './services/data.service';
     PinnedComponent,
     LabelComponent,
     DialogLabelComponent,
-    LabelDisplayComponent
+    LabelDisplayComponent,
+    DialogProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,6 @@ import { DataService } from './services/data.service';
   ],
   providers: [DataService], 
   bootstrap: [AppComponent],
-  entryComponents:[DialogBoxComponent]
+  entryComponents:[DialogBoxComponent,DialogProfileComponent]
 })
 export class AppModule { }

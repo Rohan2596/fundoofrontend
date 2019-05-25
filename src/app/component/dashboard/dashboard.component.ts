@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationGuard } from "../../services/AuthGuard";
 import { Login } from "../../models/login";
 import { Router } from "@angular/router";
+import { MatDialog,} from "@angular/material";
+import { DialogProfileComponent } from  '../dialog-profile/dialog-profile.component'
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +15,8 @@ email:string
 token:string
 login:Login=new Login()
   constructor(private authGuard:AuthenticationGuard,
-    private router:Router) { }
+    private router:Router,
+    private dialog:MatDialog) { }
 
   ngOnInit() {
     this.token=localStorage.getItem('token')
@@ -33,5 +36,13 @@ login:Login=new Login()
   }
   notes(){
     this.router.navigate(['/dashboard/note'])
+  }
+  profilePic():void{
+    const dialogRef=this.dialog.open(DialogProfileComponent)
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+       
+      })
   }
 }

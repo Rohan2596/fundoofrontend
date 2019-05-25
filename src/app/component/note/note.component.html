@@ -1,36 +1,42 @@
-<div fxLayoutAlign="center center"><app-appnote></app-appnote></div>
-<div  ><app-pinned></app-pinned></div>
-<div><h3 class="others">OTHERS</h3></div>
-<div  fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
-    
-  <div *ngFor="let items of note" fxLayoutAlign="space-around center" >
-    <mat-card [ngStyle]="{'background-color':items.color}"  class="popdownCard" >
-      <div fxLayout="column" fxLayoutAlign="start">
- <div  fxLayout="row" fxLayoutAlign="end start" >
-            <button mat-button  (click)="pin(items)"     matTooltip="pin" style="border-width: 0px;margin-right: 10px;
-    margin-top: -12px;">
+<div fxLayoutAlign="center center">
+  <app-appnote></app-appnote>
+</div>
+<div>
+  <app-pinned></app-pinned>
+</div>
+<div>
+  <h3 class="others">OTHERS</h3>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
 
-<img src="../../../assets/unpin.svg">
+  <div *ngFor="let items of note" fxLayoutAlign="space-around center">
+    <mat-card [ngStyle]="{'background-color':items.color}" class="popdownCard">
+      <div fxLayout="column" fxLayoutAlign="start">
+        <div class="main">
+          <div class="apppin">
+            <button mat-button (click)="pin(items)" matTooltip="pin">
+
+              <img src="../../../assets/unpin.svg">
             </button>
           </div>
 
-        <div style="width: 235px;word-wrap: break-word;">
-          <div (click)="openDialog(items)"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;margin-top:-12px">
-            {{items.title |uppercase}}</div>
-           
+          <div class="title">
+            <div (click)="openDialog(items)" matRipple [matRippleCentered]="centered">
+              {{items.title}}</div>
+
+          </div>
         </div>
-        <div (click)="openDialog(items)" 
+        <div class="description" (click)="openDialog(items)" matRipple [matRippleCentered]="centered"
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;width: 235px;word-wrap: break-word;">
           {{items.description}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px"  class="app-label-display">
-              <app-label-display [noteData]="items" ></app-label-display>
-            </div>
-            <div class="appiconp" fxLayout="row" fxLayoutAlign="start center"  fxLayoutGap="2px">
-              <app-app-icon [noteData]="items"></app-app-icon>
-            </div>
-     
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px" class="app-label-display">
+        <app-label-display [noteData]="items"></app-label-display>
+      </div>
+      <div class="appiconp" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
+        <app-app-icon [noteData]="items"></app-app-icon>
+      </div>
+
     </mat-card>
   </div>
 </div>
