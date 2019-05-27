@@ -33,7 +33,7 @@ import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { LabelDisplayComponent } from './component/label-display/label-display.component';
 import{DialogProfileComponent} from './component/dialog-profile/dialog-profile.component';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 import { DataService } from './services/data.service';
 
 @NgModule({
@@ -73,7 +73,8 @@ import { DataService } from './services/data.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    ImageCropperModule
     
    
   ],

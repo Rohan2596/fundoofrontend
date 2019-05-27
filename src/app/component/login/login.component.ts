@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
 
     )
     this.token = this.route.snapshot.paramMap.get('token')
+    
 
   }
   onlogin() {

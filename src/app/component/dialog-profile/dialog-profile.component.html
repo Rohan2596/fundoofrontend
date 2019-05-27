@@ -1,3 +1,12 @@
-<p>
-  dialog-profile works!
-</p>
+<h1>Select Profile Image</h1>
+<div>
+    <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">      
+      <div>
+        <input type="file" name="profile" (change)="onFileSelect($event)" />
+      </div>
+      <div>
+        <button type="submit">Upload</button>
+      </div>
+    </form>
+  </div>
+

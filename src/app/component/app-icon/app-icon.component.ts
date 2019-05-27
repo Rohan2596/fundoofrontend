@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { NoteService } from "src/app/services/note-service";
-import { LabelService } from "src/app/services/label-service";
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteService } from 'src/app/services/note-service';
+import { LabelService } from 'src/app/services/label-service';
 import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-app-icon',
@@ -16,22 +16,22 @@ export class AppIconComponent implements OnInit {
   message:any;
   arrayOfColors = [
     [
-    { name: "white",hexcode: "#ffffff" },
-    { name: "lightGreen",hexcode: "#90ee90" },
-    { name: "purple", hexcode: "#800080" },
-    { name: "red", hexcode: "#ff0000" },
+    { name: 'white',hexcode: '#ffffff' },
+    { name: 'lightGreen',hexcode: '#90ee90' },
+    { name: 'purple', hexcode: '#800080' },
+    { name: 'red', hexcode: '#ff0000' },
     ],
     [
-    { name: "Teal", hexcode: "#008080" },
-    { name: "pink", hexcode: "#ffc0cb" },
-    { name: "orange", hexcode: "#ffa500" },
-    { name: "blue", hexcode: "#0000ff" },
+    { name: 'Teal', hexcode: '#008080' },
+    { name: 'pink', hexcode: '#ffc0cb' },
+    { name: 'orange', hexcode: '#ffa500' },
+    { name: 'blue', hexcode: '#0000ff' },
     ],
     [
-    { name: "brown", hexcode: "#a52a2a" },
-    { name: "yellow", hexcode: "#ffff00" },
-    { name: "darkBlue", hexcode: "#00008b" },
-    { name: "gray", hexcode: "#808080" }
+    { name: 'brown', hexcode: '#a52a2a' },
+    { name: 'yellow', hexcode: '#ffff00' },
+    { name: 'darkBlue', hexcode: '#00008b' },
+    { name: 'gray', hexcode: '#808080' }
     ]
     ]
   constructor(private snackBar: MatSnackBar, 
@@ -51,7 +51,7 @@ export class AppIconComponent implements OnInit {
 
 getalllabels(){
   console.log('note data',this.alllabel);
-  this.labelsService.getRequest("getlabels").subscribe(
+  this.labelsService.getRequest('getlabels').subscribe(
     (response: any) => {
       this.alllabel = response;
     
@@ -61,7 +61,7 @@ getalllabels(){
 }
 
 getAllNoteLabel(){
-  this.labelsService.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
+  this.labelsService.getRequest('getallNotelabel?noteid=' + this.noteData.id).subscribe(
     (response: any) => {
       this.labelofnote = response;
 
@@ -74,22 +74,22 @@ getAllNoteLabel(){
 
 
 trashNote() {
-    console.log("note trash");
+    console.log('note trash');
 
-    this.noteservice.putRequest("notes/trash?id=" + this.noteData.id, '').subscribe(
+    this.noteservice.putRequest('notes/trash?id=' + this.noteData.id, '').subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
-          this.dataService.changeMessage("trashNotes")
+          this.dataService.changeMessage('trashNotes')
           this.snackBar.open(
-            "Note moved to trash",
-            "undo",
+            'Note moved to trash',
+            'undo',
             { duration: 2500 }
           )
 
         } else {
           this.snackBar.open(
-            "Notes trash  failed",
-            "undo",
+            'Notes trash  failed',
+            'undo',
           )
         }
 
@@ -98,22 +98,23 @@ trashNote() {
 
   }
 
-  archive() {
-    console.log("Note Archive");
-    this.noteservice.putRequest("notes/archieve?id=" + this.noteData.id, '').subscribe(
+  archive(id) {
+    console.log('Note Archive');
+    console.log(id);
+    this.noteservice.putRequest('notes/archieve?id=' + this.noteData.id, '').subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
-this.dataService.changeMessage("archive notes")
-          this.snackBar.open(
-            "Note moved to Archive",
-            "undo",
+this.dataService.changeMessage('archive notes');
+this.snackBar.open(
+            'Note moved to Archive',
+            'undo',
             { duration: 2500 }
-          )
+          );
 
         } else {
           this.snackBar.open(
-            "Notes Archive  failed",
-            "undo",
+            'Notes Archive  failed',
+            'undo',
             { duration: 2500 }
           )
         }
@@ -123,16 +124,16 @@ this.dataService.changeMessage("archive notes")
   }
   addLabelToNote(labels) {
     console.log(labels.labelId, this.noteData.id)
-    this.labelsService.putRequest("labels/addnote?labelid=" + labels.labelId + "&noteid=" + this.noteData.id, "").subscribe(
+    this.labelsService.putRequest('labels/addnote?labelid=' + labels.labelId + '&noteid=' + this.noteData.id, '').subscribe(
 
       (response: any) => {
         if (response.statusCode == 11) {
        
-          this.snackBar.open("label added", "undo", { duration: 2500 })
+          this.snackBar.open('label added', 'undo', { duration: 2500 })
           this.dataService.changeMessage('add labels');
 
         } else {
-          this.snackBar.open("labels addition FAILED", "undo", { duration: 2500 })
+          this.snackBar.open('labels addition FAILED', 'undo', { duration: 2500 })
         }
       }
 
@@ -141,14 +142,14 @@ this.dataService.changeMessage("archive notes")
 
   setcolors(name){
     console.log( this.noteData.id)
-    this.noteservice.putRequest("notes/setcolor?color="+ name +"&noteid="+this.noteData.id, "").subscribe(
+    this.noteservice.putRequest('notes/setcolor?color='+ name +'&noteid='+this.noteData.id, '').subscribe(
 
       (response: any) => {
         if (response.statusCode == 10) {
           this.dataService.changeMessage('add labels');
-          this.snackBar.open("color added", "undo", { duration: 2500 })
+          this.snackBar.open('color added', 'undo', { duration: 2500 })
         } else {
-          this.snackBar.open("color addition FAILED", "undo", { duration: 2500 })
+          this.snackBar.open('color addition FAILED', 'undo', { duration: 2500 })
         }
       }
 

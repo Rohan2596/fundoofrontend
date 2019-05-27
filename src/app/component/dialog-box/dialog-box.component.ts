@@ -16,13 +16,13 @@ export class DialogBoxComponent implements OnInit {
   @Input() noteData:any;
 
   constructor(private snackBar:MatSnackBar,
-    private dataservice:DataService,
-    private noteservice:NoteService,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              private dataservice:DataService,
+              private noteservice: NoteService,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 note:any;
 title=new FormControl(this.data.title);
 description=new FormControl(this.data.description);
-id=this.data.noteId;
+// id=this.data.noteId;
   ngOnInit() {
 
   }
@@ -30,15 +30,16 @@ id=this.data.noteId;
 
   onClose() {
     console.log("note Udapted");
+    console.log("notedid",this.noteData.id);
     this.note={
       'title':this.title.value,
       'description':this.description.value
     }
  
-    this.noteservice.putRequest("updatenotes?id="+this.id,this.note).subscribe(
+    this.noteservice.putRequest("updatenotes?id="+this.data.noteId,this.note).subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
-          console.log(response);
+          // console.log(response);
           this.dataservice.changeMessage('notes'),
           this.snackBar.open(
             "Notes Created",
@@ -48,7 +49,7 @@ id=this.data.noteId;
           )
       
         } else {
-          console.log(response);
+          // console.log(response);
           this.snackBar.open(
             "Notes not created",
             "undo",

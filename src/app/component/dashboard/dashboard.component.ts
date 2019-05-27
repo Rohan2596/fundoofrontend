@@ -19,8 +19,9 @@ login:Login=new Login()
     private dialog:MatDialog) { }
 
   ngOnInit() {
-    this.token=localStorage.getItem('token')
-    this.email=localStorage.getItem('email')
+    this.token=localStorage.getItem('token');
+    console.log(this.token);
+    this.email=localStorage.getItem('email');
   }
   onlogout(){
     localStorage.removeItem('token');
@@ -38,7 +39,8 @@ login:Login=new Login()
     this.router.navigate(['/dashboard/note'])
   }
   profilePic():void{
-    const dialogRef=this.dialog.open(DialogProfileComponent)
+    const dialogRef=this.dialog.open(DialogProfileComponent,{height: '400px',
+    width: '600px',})
     
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');

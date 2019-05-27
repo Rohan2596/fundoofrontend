@@ -91,7 +91,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   entryComponents: [
-    DialogLabelComponent
+    DialogLabelComponent,DialogBoxComponent
   ],
 })
 export class AppRoutingModule {

@@ -52,7 +52,7 @@ getlabels(){
 
   createlabel(){
     console.log("labels created")
-    console.log(this.label.labelName)
+    console.log(this.labels.labelName)
     this.labelsService.postRequest("labels/create",this.labels).subscribe(
       (response:any)=>{
         if(response.statusCode===11){
