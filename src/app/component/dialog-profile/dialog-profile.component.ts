@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service';
 import { MatSnackBar } from '@angular/material';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 @Component({
   selector: 'app-dialog-profile',
   templateUrl: './dialog-profile.component.html',
@@ -11,20 +11,28 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class DialogProfileComponent implements OnInit {
 
 uploadForm: FormGroup; 
-  constructor(private httpservice:HttpService,private formBuilder: FormBuilder,
-    private snackBar:MatSnackBar) { }
+  constructor(private httpservice:HttpService,private formBuilder: FormBuilder, private snackBar:MatSnackBar,) { }
+    imageChangedEvent: any = '';
+    croppedImage: any = '';
+    
+    fileChangeEvent(event: any): void {
+        this.imageChangedEvent = event;
+        if (this.imageChangedEvent.target.files.length > 0) {
+          const file = this.imageChangedEvent.target.files[0];
+          this.uploadForm.get('profile').setValue(file);
+        }
+    }
+    imageCropped(event) {
+        this.croppedImage = event;
+        
+    }
 
-  ngOnInit() {
+    ngOnInit() {
     this.uploadForm = this.formBuilder.group({
       profile: ['']
     });
   }
-  onFileSelect(event) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      this.uploadForm.get('profile').setValue(file);
-    }
-  }
+ 
 
   onSubmit() {
 

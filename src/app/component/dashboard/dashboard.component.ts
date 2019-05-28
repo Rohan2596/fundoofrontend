@@ -11,8 +11,8 @@ import { DialogProfileComponent } from  '../dialog-profile/dialog-profile.compon
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-email:string
-token:string
+email:string;
+token:string;
 login:Login=new Login()
   constructor(private authGuard:AuthenticationGuard,
     private router:Router,
@@ -40,7 +40,7 @@ login:Login=new Login()
   }
   profilePic():void{
     const dialogRef=this.dialog.open(DialogProfileComponent,{height: '400px',
-    width: '600px',})
+    width: '800px',})
     
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
