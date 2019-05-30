@@ -3,8 +3,10 @@
      
       border-radius:4%;
       margin-left:10px;
-      min-height:80px;
-     max-width:90% ;
+      min-height:28px;
+     max-width:223px ;
+     margin-top: 10px;
+     box-shadow: 10px 10px 8px #888888;
   }
   .others{
     margin-left: 28%;
@@ -22,10 +24,7 @@
       visibility:hidden
     
     }
-    .app-label-display{
-      margin-top: 8px;
-      margin-bottom: 8px;
-    }
+   
     mat-card:hover{
       .apppin{
         visibility: visible;
@@ -34,7 +33,11 @@
     .apppin{
       visibility: hidden;}   
 
-
+ .app-label-display{
+      min-height: 0px;
+      margin-top: 0px;
+      margin-bottom: 4px;
+    }
 .apppin{
 
   width: 42px;

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { Notes } from "../../models/note";
-import { NoteService } from "../../services/note-service";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { MAT_DIALOG_DATA } from "@angular/material";
-import { FormControl } from "@angular/forms";
+import { Notes } from '../../models/note';
+import { NoteService } from '../../services/note-service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 
 
@@ -13,56 +13,56 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./dialog-box.component.scss']
 })
 export class DialogBoxComponent implements OnInit {
-  @Input() noteData:any;
+  @Input() noteData: any;
 
-  constructor(private snackBar:MatSnackBar,
-              private dataservice:DataService,
+  constructor(private snackBar: MatSnackBar,
+              private dataservice: DataService,
               private noteservice: NoteService,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
-note:any;
-title=new FormControl(this.data.title);
-description=new FormControl(this.data.description);
-// id=this.data.noteId;
+  note: any;
+  title = new FormControl(this.data.title);
+  description = new FormControl(this.data.description);
+  id = this.data.noteId;
   ngOnInit() {
 
   }
-  
+
 
   onClose() {
-    console.log("note Udapted");
-    console.log("notedid",this.noteData.id);
-    this.note={
-      'title':this.title.value,
-      'description':this.description.value
-    }
- 
-    this.noteservice.putRequest("updatenotes?id="+this.data.noteId,this.note).subscribe(
+    console.log('note Udapted');
+    console.log('notedid', this.id);
+    this.note = {
+      title: this.title.value,
+      description: this.description.value
+    };
+
+    this.noteservice.putRequest('updatenotes?id=' + this.id, this.note).subscribe(
       (response: any) => {
         if (response.statusCode === 10) {
           // console.log(response);
           this.dataservice.changeMessage('notes'),
-          this.snackBar.open(
-            "Notes Created",
-            "undo",
-            { duration: 2500 }
-            
-          )
-      
+            this.snackBar.open(
+              'Notes Created',
+              'undo',
+              { duration: 2500 }
+
+            );
+
         } else {
           // console.log(response);
           this.snackBar.open(
-            "Notes not created",
-            "undo",
+            'Notes not created',
+            'undo',
             { duration: 2500 }
-          )
+          );
         }
       }
-    )
-    this.note.title=null;
-    this.note.description=null;
+    );
+    this.note.title = null;
+    this.note.description = null;
 
-    
 
-    }
-  
+
+  }
+
 }

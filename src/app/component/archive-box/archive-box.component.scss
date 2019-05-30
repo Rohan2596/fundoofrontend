@@ -1,31 +1,70 @@
-.popdownCard{
+
+    .popdownCard{
      
-  border-radius:8%;
-  margin-left:10px;
-  min-height:80px;
-  width:320px;
-}
-.others{
-margin-left: 28%;
-margin-top:2%;
-font-family: Roboto,Arial,sans-serif;
-font-weight: normal;
-font-size: 11px
-}
-mat-card:hover{
-.appiconp{
-  visibility:visible
-}
+      border-radius:4%;
+      margin-left:10px;
+      min-height:80px;
+     max-width:223px ;
+     margin-top: 10px;
+     box-shadow: 10px 10px 8px #888888;
+     
   }
-.appiconp{
-  visibility:hidden
+  .others{
+    margin-left: 28%;
+    margin-top:2%;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: normal;
+    font-size: 11px
+  }
+  mat-card:hover{
+    .appiconp{
+      visibility:visible
+    }
+      }
+    .appiconp{
+      visibility:hidden
+    
+    }
+    .app-label-display{
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    mat-card:hover{
+      .apppin{
+        visibility: visible;
+      }
+    }
+    .apppin{
+      visibility: hidden;}   
+
+
+.apppin{
+
+  width: 42px;
+  height: 36px;
+  float: right;
+  width: 15%;
 
 }
-.app-label-display{
-  margin-top: 8px;
-  margin-bottom: 8px;
+.title{
+float: left;
+width: 85%;
+  word-wrap: break-word;
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 15px;
+  margin-top:0px
 }
-
-.appiconp{
-margin-left: -25px
+.description{
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 10px;
+  margin-top:8px;
+  width: 80%;
+  word-wrap: break-word;
+}
+.main{
+  width: 90%;
 }

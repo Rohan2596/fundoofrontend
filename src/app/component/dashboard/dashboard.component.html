@@ -17,14 +17,14 @@
         </div>
 
         <div fxHide.xs>
-          <h1 class="example-app-name">FundooApp</h1>
+          <h1 class="example-app-name">{{header}}</h1>
         </div>
 
         <div class="search" fxLayout="column" fxLayoutAlign="center">
 
           <mat-card appearance="outline" style="border-radius: 72px">
             <mat-icon matSuffix>search</mat-icon>
-            <mat-label>Search</mat-label>
+            <mat-label  fxHide.xs >Search</mat-label>
             <!-- <input type="search" matInput placeholder="Search"> -->
 
           </mat-card>
@@ -76,7 +76,7 @@
               <div  class="notes" (click)="notes()" >
                 <div class="iconimage"  matTooltip="Notes">
                   <img src="https://img.icons8.com/bubbles/50/000000/light-on.png">
-                  <div class="iconname"> Notes</div>
+                  <div fxHide.xs class="iconname"> Notes</div>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@
 
                 <div class="iconimage" matTooltip="Remainder">
                   <img src="https://img.icons8.com/bubbles/50/000000/alarm.png">
-                  <div class="iconname">Remainder</div>
+                  <div fxHide.xs class="iconname">Remainder</div>
                 </div>
 
               </div>
@@ -94,8 +94,8 @@
           
           </div>
         <hr>
-          <div style="margin-left: -24px">
-              <p class="label"> LABELS </p>
+          <div style="margin-left: -24px;">
+              <p class="label" style="margin-top: -17px;margin-left: 13px;"> LABELS </p>
             <app-label></app-label>
           </div>
           <hr>
@@ -105,14 +105,14 @@
 
                 <div class="iconimage"    matTooltip="Archive">
                   <img src="https://img.icons8.com/bubbles/50/000000/folder-invoices.png">
-                  <div class="iconname">Archive</div>
+                  <div fxHide.xs class="iconname">Archive</div>
               </div>
 
               </div>
               <div class="notes" (click)="trashbox()"   >
                 <div  class="iconimage"  matTooltip="Trash">
                   <img src="https://img.icons8.com/bubbles/48/000000/trash.png">
-                  <div class="iconname">Trash</div>
+                  <div fxHide.xs class="iconname">Trash</div>
               </div>
               </div>
          

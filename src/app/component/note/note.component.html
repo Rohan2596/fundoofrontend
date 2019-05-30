@@ -30,9 +30,11 @@
           style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;width: 235px;word-wrap: break-word;">
           {{items.description}}</div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="2px" class="app-label-display">
+      
+      <div  class="app-label-display">
         <app-label-display [noteData]="items"></app-label-display>
       </div>
+
       <div class="appiconp" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
         <app-app-icon [noteData]="items"></app-app-icon>
       </div>

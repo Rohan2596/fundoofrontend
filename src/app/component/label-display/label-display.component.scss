@@ -1,21 +1,39 @@
 .mat-chip{
     justify-content: center;
-    min-width: 35px;
-    padding: 6px 6px;
+    min-width: 20px;
+
+    padding: 3px 3px;
     align-items: center;
-    height: 18px;
+    min-height: 30px;
     display: flex;
     font-size: 14px;
     font-family: 'Google Sans,Roboto,Arial,sans-serif'; 
-    background-color: transparent
+    background-color: transparent;
+    border: 25px;
+
       
 }
+// .chip{
+//     backface-visibility: visible;
+    
+// }
 .remove{
+    margin-bottom: 2px;
     justify-content: center;
     min-width: 1px;
     padding: 1px 4px;
     align-items: center;
     // height: 18px;
     display: flex;
+    margin-left: -1px;
+    background-color:transparent 
 
+}
+mat-chip:hover{
+    .remove{
+        visibility: visible;
+    }
+}
+.remove{
+    visibility: hidden;
 }

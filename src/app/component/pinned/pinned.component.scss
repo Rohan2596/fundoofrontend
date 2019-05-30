@@ -3,8 +3,10 @@
      
       border-radius:4%;
       margin-left:10px;
-      min-height:80px;
-     max-width:90% ;
+      margin-top: 10px;
+      min-height:28px;
+     max-width:223px; 
+     box-shadow: 10px 10px 8px #888888;
   }
   .Pinned{
     margin-left: 28%;
@@ -22,10 +24,7 @@
       visibility:hidden
     
     }
-    .app-label-display{
-      margin-top: 8px;
-      margin-bottom: 8px;
-    }
+   
     mat-card:hover{
       .apppin{
         visibility: visible;
@@ -64,4 +63,8 @@ width: 85%;
 }
 .main{
   width: 90%;
+}
+.app-label-display{
+  margin-top: 20px;
+  margin-bottom: 8px;
 }

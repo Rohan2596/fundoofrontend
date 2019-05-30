@@ -1,6 +1,29 @@
 input.input:focus{
     outline-width: 0;
 }
+
 .input{
     width: 60%
 }
+.title{
+    float: left;
+    width: 85%;
+      word-wrap: break-word;
+      color: #202124;
+      direction: ltr;
+      font-family: 'Roboto',arial,sans-serif;
+      font-size: 15px;
+      margin-top:0px;
+      border-width: 0;
+    }
+
+    .description{
+        border-width: 0;
+      color: #202124;
+      direction: ltr;
+      font-family: 'Roboto',arial,sans-serif;
+      font-size: 10px;
+      margin-top:8px;
+      width: 80%;
+      word-wrap: break-word;
+    }
