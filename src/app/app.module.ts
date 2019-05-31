@@ -35,6 +35,7 @@ import { LabelDisplayComponent } from './component/label-display/label-display.c
 import{DialogProfileComponent} from './component/dialog-profile/dialog-profile.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { DataService } from './services/data.service';
+import { DialogCollabratorsComponent } from './component/dialog-collabrators/dialog-collabrators.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DataService } from './services/data.service';
     LabelComponent,
     DialogLabelComponent,
     LabelDisplayComponent,
-    DialogProfileComponent
+    DialogProfileComponent,
+    DialogCollabratorsComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +82,6 @@ import { DataService } from './services/data.service';
   ],
   providers: [DataService], 
   bootstrap: [AppComponent],
-  entryComponents:[DialogBoxComponent,DialogProfileComponent]
+  entryComponents:[DialogBoxComponent, DialogProfileComponent , DialogCollabratorsComponent]
 })
 export class AppModule { }

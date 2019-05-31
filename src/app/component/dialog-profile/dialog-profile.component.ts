@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 @Component({
@@ -10,11 +10,14 @@ import { ImageCroppedEvent } from 'ngx-image-cropper';
 })
 export class DialogProfileComponent implements OnInit {
 
-uploadForm: FormGroup; 
-  constructor(private httpservice:HttpService,private formBuilder: FormBuilder, private snackBar:MatSnackBar,) { }
+uploadForm: FormGroup;
+  constructor(private httpservice: HttpService,
+              private formBuilder: FormBuilder,
+              private snackBar: MatSnackBar,
+              private dialogRef: MatDialogRef<DialogProfileComponent>) { }
     imageChangedEvent: any = '';
     croppedImage: any = '';
-    
+
     fileChangeEvent(event: any): void {
         this.imageChangedEvent = event;
         if (this.imageChangedEvent.target.files.length > 0) {
@@ -24,7 +27,7 @@ uploadForm: FormGroup;
     }
     imageCropped(event) {
         this.croppedImage = event;
-        
+
     }
 
     ngOnInit() {
@@ -32,15 +35,16 @@ uploadForm: FormGroup;
       profile: ['']
     });
   }
- 
+
 
   onSubmit() {
 
 
-    this.httpservice.uploadImage('uploadImage',this.uploadForm.get('profile').value).subscribe(
+    this.httpservice.uploadImage('uploadImage', this.uploadForm.get('profile').value).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );
+    this.dialogRef.close( ' profile dialog closed ' );
   }
 
   // UploadImage(){
@@ -49,14 +53,14 @@ uploadForm: FormGroup;
   //     (response: any) => {
   //       if (response.statusCode === 10) {
   //         console.log(response);
-       
+
   //         this.snackBar.open(
   //           "Image uploaded",
   //           "undo",
   //           { duration: 2500 }
-            
+
   //         )
-      
+
   //       } else {
   //         console.log(response);
   //         this.snackBar.open(
@@ -67,7 +71,7 @@ uploadForm: FormGroup;
   //       }
   //     }
   //   )
-    
-    
+
+
   // }
 }

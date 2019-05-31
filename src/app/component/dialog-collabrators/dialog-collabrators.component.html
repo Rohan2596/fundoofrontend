@@ -1,0 +1,28 @@
+<div>
+  <div class="title">
+    Collaborators
+    </div>
+  
+<div>
+  <button mat-mini-fab>{{ownerUser | slice: 0 : 5 }}</button>
+  <span>(Owner)</span>
+<span>{{ownerUser}}</span>
+
+</div>
+<div></div>
+<div fxLayout="row" fxLayoutAlign=" start">
+ <div> 
+<button  mat-mini-fab></button> </div>
+<div>
+    <input type="email" matInput placeholder="Enter your email" [formControl]="collabEmail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+</div>
+<div> 
+    <button (click)="addcollab()"  mat-button><mat-icon>done</mat-icon></button></div>
+</div>
+<hr>
+<div>
+    <button mat-button >Cancel</button>
+    <button mat-button>Save</button>
+</div>
+
+</div>

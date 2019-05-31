@@ -23,8 +23,9 @@ export class DialogBoxComponent implements OnInit {
   title = new FormControl(this.data.title);
   description = new FormControl(this.data.description);
   id = this.data.noteId;
+  color = this.data.color;
   ngOnInit() {
-
+console.log(this.data.color);
   }
 
 
@@ -33,9 +34,9 @@ export class DialogBoxComponent implements OnInit {
     console.log('notedid', this.id);
     this.note = {
       title: this.title.value,
-      description: this.description.value
+      description: this.description.value,
+      color: this.color.value
     };
-
     this.noteservice.putRequest('updatenotes?id=' + this.id, this.note).subscribe(
       (response: any) => {
         if (response.statusCode === 10) {

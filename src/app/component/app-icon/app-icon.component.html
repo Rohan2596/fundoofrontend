@@ -17,12 +17,12 @@
     </button>
   </div>
   <div>
-    <button mat-button class="buttonApps" matTooltip="Collabrator" style="border-width: 0px;">
+    <button mat-button  (click)='opendialogCollab(noteData.id)'  class="buttonApps" matTooltip="Collabrator" style="border-width: 0px;">
       <img src="../../../assets/colabrator.svg">
     </button>
   </div>
   <div>
-    <button mat-button  class="buttonApps" matTooltip="Change Color" [matMenuTriggerFor]="colorplatte" style="border-width: 0px;">
+    <button mat-button    class="buttonApps" matTooltip="Change Color" [matMenuTriggerFor]="colorplatte" style="border-width: 0px;">
       <img src="../../../assets/colorplatte.svg">
     </button>
   </div>

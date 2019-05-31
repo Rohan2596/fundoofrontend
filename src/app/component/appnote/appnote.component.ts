@@ -27,6 +27,14 @@ export class AppnoteComponent implements OnInit {
 }
 
   onClose() {
+  if ( this.note.title == null && this.note.description == null) {
+    console.log('title and descritpion are null');
+    this.popup = false;
+  } else if (this.note.title == null || this.note.description == null) {
+    console.log(' one of the two fiels are empty');
+    this.popup = false;
+  } else if (this.note.title != null && this.note.description != null) {
+
     console.log('note created');
 
     this.noteservice.postRequest('createNotes', this.note).subscribe(
@@ -56,5 +64,5 @@ export class AppnoteComponent implements OnInit {
     this.popup = false;
 
 
-    }
+    }}
   }

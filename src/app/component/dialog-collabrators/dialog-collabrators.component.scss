@@ -1,0 +1,30 @@
+.title{
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: rgb(32, 33, 36);
+    direction: ltr;
+    display: flex;
+    font-family: Roboto, arial, sans-serif;
+    font-size: 18px;
+    font-weight: 5000;
+    height: 25px;
+ 
+}
+.input{
+    float: right;
+    color: #202124;direction: ltr;
+    font-family: 'Roboto',arial,sans-serif;
+    font-size: 20px;
+
+    width:50%;
+   
+}
+.button{
+    float: left;
+    width: 5%;
+}
+.footer{
+    position: fixed;
+   
+}

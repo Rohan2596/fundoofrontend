@@ -45,7 +45,8 @@ openDialog(items: any): void {
   const dialogRef = this.dialog.open(DialogBoxComponent, {
       data: { title: items.title,
               description: items.description,
-              noteId: items.id}
+              noteId: items.id,
+            color: items.color}
     });
   dialogRef.afterClosed().subscribe(result => {
     console.log('dialog result:${result}');

@@ -1,10 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { MatSnackBar } from '@angular/material';
 import { LabelService } from 'src/app/services/label-service';
 import { Labels } from 'src/app/models/label';
 import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
+
+
 @Component({
   selector: 'app-dialog-label',
   templateUrl: './dialog-label.component.html',
@@ -19,7 +21,8 @@ message: any;
     private snackBar: MatSnackBar,
     private labelsService: LabelService,
     private dataService: DataService,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef <DialogLabelComponent>) { }
 label: any;
      labelName = new FormControl('');
 
@@ -45,12 +48,19 @@ getlabels() {
       'Labels ',
       'undo',
       {duration: 2500}
-    );}
+    ); }
     );
 }
 
 
   createlabel() {
+    if (this.labels.labelName == null) {
+      this.snackBar.open(
+        'labels Name is empty',
+        'undo',
+        {duration: 1000}
+      );
+    } else if (this.labels.labelName != null) {
     console.log('labels created');
     console.log(this.labels.labelName);
     this.labelsService.postRequest('labels/create', this.labels).subscribe(
@@ -63,7 +73,7 @@ getlabels() {
         }
       }
     );
-  }
+  }}
   clear() {
     console.log('labels cleared');
     this.labels.labelName = null;
@@ -71,8 +81,8 @@ getlabels() {
   delete(items) {
 
     console.log('labels delete permanetly');
-    console.log('Delete'+ items.labelId);
-    this.labelsService.deleteRequest('labels/delete?id='+ items.labelId).subscribe(
+    console.log('Delete' + items.labelId);
+    this.labelsService.deleteRequest('labels/delete?id=' + items.labelId).subscribe(
       (response: any) => {
               if (response.statusCode === 11) {
                 console.log();
@@ -103,7 +113,7 @@ getlabels() {
      this.label = {
       labelName: this.labelName.value
      };
-     this.labelsService.putRequest('labels/update?id='+ items.labelId, this.label).subscribe(
+     this.labelsService.putRequest('labels/update?id=' + items.labelId, this.label).subscribe(
        (response: any) => {
         if (response.statusCode === 11) {
            console.log(this.label);
@@ -113,5 +123,12 @@ getlabels() {
         }
      }
     );
-  }
+    }
+
+ done() {
+   this.dialogRef.close('label dialog ');
+ }
+
 }
+
+

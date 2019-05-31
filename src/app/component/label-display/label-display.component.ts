@@ -11,33 +11,33 @@ import { DataService } from 'src/app/services/data.service';
 export class LabelDisplayComponent implements OnInit {
   @Input() noteData: any;
   labelofnote: any[];
-  constructor(private noteservice:NoteService,
-    private snackBar:MatSnackBar,
-    private dataService:DataService) { }
+  constructor(private noteservice: NoteService,
+              private snackBar: MatSnackBar,
+              private dataService: DataService) { }
 
   ngOnInit() {
-    this.noteservice.getRequest("getallNotelabel?noteid=" + this.noteData.id).subscribe(
+    this.noteservice.getRequest('getallNotelabel?noteid=' + this.noteData.id).subscribe(
       (response: any) => {
 
         this.labelofnote = response;
         console.log(this.labelofnote);
       }
-    )
+    );
   }
-  remove(items){
+  remove(items) {
     console.log(this.noteData.id);
     console.log(items);
-    this.noteservice.putRequest("notes/removeNotetolabel?labelid="+  items.labelId  +"&noteid="+this.noteData.id,"").subscribe(
-      (response:any)=>{
-        if(response.statusCode==10){
-          this.dataService.changeMessage('remove labels')
-          this.snackBar.open("labels removed","undo",{duration:2500})
-        }else{
-          this.snackBar.open("labels removed FAILED","undo",{duration:2500})
+    this.noteservice.putRequest('notes/removeNotetolabel?labelid='+  items.labelId  + "&noteid=" + this.noteData.id, "").subscribe(
+      (response: any) => {
+        if (response.statusCode == 10) {
+          this.dataService.changeMessage('remove labels');
+          this.snackBar.open('labels removed','undo', {duration: 2500});
+        } else {
+          this.snackBar.open('labels removed FAILED','undo', {duration: 2500});
         }
 
       }
-    )
+    );
   }
 
 }
