@@ -5,8 +5,14 @@ input.input:focus{
     width: 60%
 }
 .popupCard{
-    box-shadow: 10px 10px 8px #888888;
+    width: 498px;
+    box-shadow:  0 3px 5px rgba(0,0,0,0.20);
+    height: 25px;
 }
 .popdownCard{
-    box-shadow: 10px 10px 8px #888888;
+    box-shadow:  0 3px 5px rgba(7, 1, 1, 0.2);
+}
+.popdownCard{
+    width: 498px;
+    border-radius: 1.5%
 }

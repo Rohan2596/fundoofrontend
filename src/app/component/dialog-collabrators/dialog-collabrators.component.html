@@ -1,4 +1,4 @@
-<div>
+<div fxLayout="column" fxLayoutAlign="start start"> 
   <div class="title">
     Collaborators
     </div>
@@ -9,15 +9,29 @@
 <span>{{ownerUser}}</span>
 
 </div>
-<div></div>
-<div fxLayout="row" fxLayoutAlign=" start">
+<div fxLayout="row" fxLayoutAlign=" start"  fxLayoutGap="60px">
+  <div *ngFor='let collab of collablist'>
+  <button mat-mini-fab>{{collab.emailId | slice: 0 : 5 }}</button>
+
+<span>{{collab.emailId}}</span>
+<button style="margin-left: 205px" (click)="removecollab(collab.emailId)"     mat-button><mat-icon>cancel</mat-icon></button>
+</div>
+
+
+</div>
+<div fxLayout="row" fxLayoutAlign=" start"  fxLayoutGap="20px">
  <div> 
-<button  mat-mini-fab></button> </div>
-<div>
-    <input type="email" matInput placeholder="Enter your email" [formControl]="collabEmail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+<button  mat-mini-fab><mat-icon>person</mat-icon>
+</button> 
+</div>
+
+<div >
+    <input  style="margin-top: 10px;width: 247px;"  type="email" matInput placeholder="Enter your email" [formControl]="collabEmail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 </div>
 <div> 
     <button (click)="addcollab()"  mat-button><mat-icon>done</mat-icon></button></div>
+
+
 </div>
 <hr>
 <div>

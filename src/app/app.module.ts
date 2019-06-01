@@ -32,10 +32,11 @@ import { PinnedComponent } from './component/pinned/pinned.component';
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { LabelDisplayComponent } from './component/label-display/label-display.component';
-import{DialogProfileComponent} from './component/dialog-profile/dialog-profile.component';
+import {DialogProfileComponent} from './component/dialog-profile/dialog-profile.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { DataService } from './services/data.service';
 import { DialogCollabratorsComponent } from './component/dialog-collabrators/dialog-collabrators.component';
+import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { DialogCollabratorsComponent } from './component/dialog-collabrators/dia
     DialogLabelComponent,
     LabelDisplayComponent,
     DialogProfileComponent,
-    DialogCollabratorsComponent
+    DialogCollabratorsComponent,
+    CollabsDisplayComponent
   ],
   imports: [
     BrowserModule,

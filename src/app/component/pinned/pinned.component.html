@@ -25,6 +25,9 @@
         <div  class="app-label-display">
           <app-label-display  [noteData]="items"></app-label-display>
         </div>
+        <div>
+            <app-collabs-display  (click)='opendialogCollab(items.id)'  [noteData]="items"></app-collabs-display>
+          </div>
         <div class="appiconp" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>

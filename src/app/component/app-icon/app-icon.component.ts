@@ -78,8 +78,8 @@ export class AppIconComponent implements OnInit {
   }
   opendialogCollab(id: any): void {
     const dialogRef = this.dialog.open(DialogCollabratorsComponent, {
-      width: '653px',
-      height: '210px', data: {
+      width: '653px',minHeight: '250px',
+       data: {
 
         noteId: id,
       }

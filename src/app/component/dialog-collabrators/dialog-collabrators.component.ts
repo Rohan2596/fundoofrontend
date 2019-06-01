@@ -11,34 +11,68 @@ import { FormControl } from '@angular/forms';
 export class DialogCollabratorsComponent implements OnInit {
   @Input() noteData: any;
   ownerUser: string;
-  constructor(private noteService: NoteService, private snackBar: MatSnackBar, @Inject(MAT_DIALOG_DATA) public data: any ) { }
+   collablist: any [];
+  constructor(private noteService: NoteService, private snackBar: MatSnackBar, @Inject(MAT_DIALOG_DATA) public data: any) { }
   collabEmail = new FormControl('');
   ngOnInit() {
     this.ownerUser = localStorage.getItem('email');
+    this.getcollablist();
+
   }
   addcollab() {
-    console.log('collabrator added',this.collabEmail.value,this.data);
+    console.log('collabrator added', this.collabEmail.value, this.data.noteId);
 
-    this.noteService.putRequest('notes/addcollabrator?collabemailid=' + this.collabEmail + '&noteid=' + this.data, '').subscribe(
+    this.noteService.putRequest('notes/addcollabrator?collabemailid=' + this.collabEmail.value + '&noteid=' + this.data.noteId, '').subscribe(
       (response: any) => {
         if (response.statusCode === 101) {
-          // console.log(response);
-
-          this.snackBar.open(
-            'Notes Created',
+                  console.log(response);
+                  this.snackBar.open(
+           'Collabrator Created',
             'undo',
             { duration: 2500 }
 
           );
 
         } else {
-          // console.log(response);
           this.snackBar.open(
-            'Notes not created',
+            'Collabrator not created',
             'undo',
             { duration: 2500 }
           );
         }
-  });
+      });
+  }
+  removecollab(emailId) {
+    console.log('collabrator removed', emailId, this.data.noteId);
+
+    this.noteService.putRequest('notes/removecollabrator?collabemailid=' + emailId + '&noteid=' + this.data.noteId, '').subscribe(
+      (response: any) => {
+        if (response.statusCode === 101) {
+                  console.log(response);
+                  this.snackBar.open(
+           'Collabator removed',
+            'undo',
+            { duration: 2500 }
+
+          );
+
+        } else {
+          this.snackBar.open(
+            'Collabrator failed',
+            'undo',
+            { duration: 2500 }
+          );
+        }
+      });
+  
+
+  }
+getcollablist(){
+  this.noteService.getRequest('getallcollablist?noteid=' + this.data.noteId).subscribe(
+    (response: any) => {
+   this.collablist = response;
+   console.log(response);
+    });
 }
+
 }

@@ -7,22 +7,22 @@
 
         <div style="border-width: 0px;">
           <input matInput type="text" placeholder="Take a Note..." class="input"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;width: 350px;border-width: 0px;" />
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;font-size: 20px;width: 320px;border-width: 0px;" />
         </div>
-        <div fxLayout="row" fxLayoutAlign="end center">
+        <div fxLayout="row" fxLayoutAlign="end center"   fxLayoutGap="10px">
           <button matTooltip="New List" style="background-color: white;border-width: 0px;">
 
-            <img src="https://img.icons8.com/color/24/000000/approval.png">
+              <mat-icon>check_box</mat-icon>
           </button>
 
           <button matTooltip="New note with drawing" style="background-color: white;border-width: 0px;">
 
-            <img src="https://img.icons8.com/color/24/000000/paint.png">
+              <mat-icon>brush</mat-icon>
           </button>
 
           <button matTooltip="New note with image" style="background-color: white;border-width: 0px;">
 
-            <img src="https://img.icons8.com/color/24/000000/add-image.png">
+              <mat-icon>photo</mat-icon>
 
           </button>
 
@@ -37,7 +37,7 @@
 
       <div flex=10 fxLayout="column" fxLayoutAlign="start start">
         <div fxLayout="row" fxLayoutAlign="end start">
-          <button mat-button matTooltip="pin" style="border-width: 0px;margin-right: -427px;margin-top: -12px;">
+          <button mat-button matTooltip="pin" style="border-width: 0px;margin-right: -450px;margin-top: -12px;">
 
             <img src="../../../assets/unpin.svg">
           </button>
@@ -46,7 +46,7 @@
 
         <div fxLayout="row" fxLayoutAlign="start start" style="margin-top:-12px;border-width: 0px">
           <input class="input" matInput type="text" placeholder="Title" [(ngModel)]="note.title"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px; width: 392px;" />
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px;border-width: 0px; width: 400px;" />
 
 
         </div>
@@ -54,14 +54,14 @@
 
         <div style="margin-top:15px;border-width: 0px" class="input">
           <textarea matInput type="text" placeholder="Take a note..." [(ngModel)]="note.description"
-            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 423px;    border-width: 0px; outline-width: 0;"></textarea>
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;width: 400px;    border-width: 0px; outline-width: 0;"></textarea>
         </div>
 
 
         <div fxLayout="row" fxLayoutAlign="space-between end">
           <app-app-icon [noteData]="note" ></app-app-icon>
           <button (click)="onClose()" (click)="popup" matTooltip="Close the note"
-            style="border-width: 0px;background: white;margin-bottom: 12px;margin-left: 28px">
+            style="border-width: 0px;background: white;margin-bottom: 12px;margin-left: 180px">
 
             Close
           </button>
