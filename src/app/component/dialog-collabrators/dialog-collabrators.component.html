@@ -9,12 +9,12 @@
 <span>{{ownerUser}}</span>
 
 </div>
-<div fxLayout="row" fxLayoutAlign=" start"  fxLayoutGap="60px">
-  <div *ngFor='let collab of collablist'>
+<div fxLayout="column" fxLayoutAlign=" start"  >
+  <div *ngFor='let collab of collablist' >
   <button mat-mini-fab>{{collab.emailId | slice: 0 : 5 }}</button>
 
-<span>{{collab.emailId}}</span>
-<button style="margin-left: 205px" (click)="removecollab(collab.emailId)"     mat-button><mat-icon>cancel</mat-icon></button>
+<span style="width: 470px">{{collab.emailId}}</span>
+<button style="margin-left: 200px" (click)="removecollab(collab.emailId)"     mat-button><mat-icon>cancel</mat-icon></button>
 </div>
 
 
@@ -26,7 +26,7 @@
 </div>
 
 <div >
-    <input  style="margin-top: 10px;width: 247px;"  type="email" matInput placeholder="Enter your email" [formControl]="collabEmail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input  style="margin-top: 10px;width: 463px;"  type="email" matInput placeholder="Enter your email" [formControl]="collabEmail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 </div>
 <div> 
     <button (click)="addcollab()"  mat-button><mat-icon>done</mat-icon></button></div>

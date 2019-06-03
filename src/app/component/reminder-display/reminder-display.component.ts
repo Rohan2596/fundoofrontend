@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-reminder-display',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reminder-display.component.scss']
 })
 export class ReminderDisplayComponent implements OnInit {
-
+@Input() noteData:any;
   constructor() { }
 
   ngOnInit() {

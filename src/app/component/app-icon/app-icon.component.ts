@@ -5,6 +5,7 @@ import { LabelService } from 'src/app/services/label-service';
 import { DataService } from 'src/app/services/data.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogCollabratorsComponent } from '../dialog-collabrators/dialog-collabrators.component';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-app-icon',
   templateUrl: './app-icon.component.html',
@@ -38,11 +39,12 @@ export class AppIconComponent implements OnInit {
       { name: 'gray', hexcode: '#808080' }
     ]
   ];
+  dateCalendar=new FormControl('');
   constructor(private snackBar: MatSnackBar,
-    private noteservice: NoteService,
-    private labelsService: LabelService,
-    private dataService: DataService,
-    private dialog: MatDialog) { }
+              private noteservice: NoteService,
+              private labelsService: LabelService,
+              private dataService: DataService,
+              private dialog: MatDialog) { }
 
 
 
@@ -53,6 +55,123 @@ export class AppIconComponent implements OnInit {
 
 
   }
+setToday() {
+
+  const date1 = new Date().toDateString();
+
+  let reminder1 = date1 + ', 8:00 ';
+
+  console.log('in reminder1==>', reminder1);
+  this.noteservice.putRequest('notes/reminder?date=' + reminder1 + '&noteid=' + this.noteData.id, '').subscribe(
+    (response: any) => {
+      if (response.statusCode === 10) {
+        // this.dataService.changeMessage('trashNotes');
+        this.snackBar.open(
+          'Reminder added',
+          'undo',
+          { duration: 2500 }
+        );
+
+      } else {
+        this.snackBar.open(
+          'Reminder Addition   failed',
+          'undo',
+        );
+      }
+
+    }
+  );
+
+}
+setTomorrow() {
+  const days = ['Mon','Tue', "Wed",'Thu','Fri', "Sat", "Sun", "Mon"];
+  let date = new Date().toDateString();
+  const rewhr = new Date().getDate() + 1;
+  date = date.replace(new Date().getDate().toString(), rewhr.toString());
+  // console.log("srfas",date);
+  date = date.replace(days[new Date().getDay() - 1], days[new Date().getDay()]);
+  const remindert = date + ', 8:00 ' ;
+  // this.remindChange.emit(reminder1);
+  console.log('tommorow reminder==>', remindert);
+  this.noteservice.putRequest('notes/reminder?date=' + remindert + '&noteid=' + this.noteData.id, '').subscribe(
+    (response: any) => {
+      if (response.statusCode === 10) {
+        // this.dataService.changeMessage('trashNotes');
+        this.snackBar.open(
+          'Reminder added',
+          'undo',
+          { duration: 2500 }
+        );
+
+      } else {
+        this.snackBar.open(
+          'Reminder Addition   failed',
+          'undo',
+        );
+      }
+
+    }
+  );
+}
+setWeekly() {
+  const days = ['Mon','Tue', "Wed",'Thu','Fri', "Sat", "Sun", "Mon"];
+  let date = new Date().toDateString();
+  const rewhr = new Date().getDate() + 7;
+  date = date.replace(new Date().getDate().toString(), rewhr.toString());
+  // console.log("srfas",date);
+  date = date.replace(days[new Date().getDay() - 7], days[new Date().getDay()]);
+  const remindert = date + ', 8:00 ' ;
+  // this.remindChange.emit(reminder1);
+  console.log('tommorow reminder==>', remindert);
+  this.noteservice.putRequest('notes/reminder?date=' + remindert + '&noteid=' + this.noteData.id, '').subscribe(
+    (response: any) => {
+      if (response.statusCode === 10) {
+        // this.dataService.changeMessage('trashNotes');
+        this.snackBar.open(
+          'Reminder added',
+          'undo',
+          { duration: 2500 }
+        );
+
+      } else {
+        this.snackBar.open(
+          'Reminder Addition   failed',
+          'undo',
+        );
+      }
+
+    }
+  );
+
+
+}
+setPickTime(){
+  console.log("pick a date ")
+  console.log(this.dateCalendar.value);
+
+  this.noteservice.putRequest('notes/reminder?date=' + this.dateCalendar.value + '&noteid=' + this.noteData.id, '').subscribe(
+    (response: any) => {
+      if (response.statusCode === 10) {
+        // this.dataService.changeMessage('trashNotes');
+        this.snackBar.open(
+          'Reminder added',
+          'undo',
+          { duration: 2500 }
+        );
+
+      } else {
+        this.snackBar.open(
+          'Reminder Addition   failed',
+          'undo',
+        );
+      }
+
+    }
+  );
+  this.dateCalendar=null;
+}
+
+
 
   getalllabels() {
     console.log('note data', this.alllabel);
@@ -78,7 +197,7 @@ export class AppIconComponent implements OnInit {
   }
   opendialogCollab(id: any): void {
     const dialogRef = this.dialog.open(DialogCollabratorsComponent, {
-      width: '653px',minHeight: '250px',
+      width: '653px', minHeight: '250px',
        data: {
 
         noteId: id,

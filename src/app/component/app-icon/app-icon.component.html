@@ -12,7 +12,7 @@
 <div fxLayout="row" fxLayoutAlign="start center" > 
 
   <div>
-    <button  mat-button class="buttonApps" matTooltip="Remind me" style="border-width: 0px;" >
+    <button  mat-button class="buttonApps" matTooltip="Remind me"   [matMenuTriggerFor]="reminder" style="border-width: 0px;" >
       <img src="../../../assets/remindme.svg">
     </button>
   </div>
@@ -54,6 +54,39 @@
     </div>
 
 
+  </mat-menu>
+</div>
+<div>
+  <mat-menu #reminder="matMenu" >
+    <div  class="reminderMain" >
+      <div class="reminderTittle">Reminder:
+        
+      </div>
+      <div (click)='setToday()' class="reminderInside">Later Today
+          <span style="margin-left: 57%">8:00</span>
+      </div>
+      <div (click)='setTomorrow()' class="reminderInside">Tomorrow
+        <span style="margin-left: 60%">8:00</span>
+      </div>
+      <div (click)='setWeekly()' class="reminderInside">Weekly
+          <span style="margin-left: 66%">8:00</span>
+      </div>
+      <div >
+      <div  (click)='setPickTime()' class="reminderInside"  >
+        <mat-icon>access_time</mat-icon>
+         <span> Pick A Date </span> 
+
+      </div>
+      <div >
+          <mat-form-field class="reminderInside">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="dateCalendar">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+      </div>
+      </div>
+    </div>
   </mat-menu>
 </div>
 <div>

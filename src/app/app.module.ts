@@ -37,6 +37,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { DataService } from './services/data.service';
 import { DialogCollabratorsComponent } from './component/dialog-collabrators/dialog-collabrators.component';
 import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
+import { ReminderDisplayComponent } from './component/reminder-display/reminder-display.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { CollabsDisplayComponent } from './component/collabs-display/collabs-dis
     LabelDisplayComponent,
     DialogProfileComponent,
     DialogCollabratorsComponent,
-    CollabsDisplayComponent
+    CollabsDisplayComponent,
+    ReminderDisplayComponent
   ],
   imports: [
     BrowserModule,

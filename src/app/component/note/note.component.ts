@@ -35,7 +35,7 @@ ngOnInit() {
   }
   opendialogCollab(id: any): void {
     const dialogRef = this.dialog.open(DialogCollabratorsComponent, {
-      width: '300px',minHeight: '250px',
+     minWidth : '200px',minHeight: '250px',
        data: {
 
         noteId: id,
