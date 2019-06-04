@@ -38,6 +38,7 @@ import { DataService } from './services/data.service';
 import { DialogCollabratorsComponent } from './component/dialog-collabrators/dialog-collabrators.component';
 import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
 import { ReminderDisplayComponent } from './component/reminder-display/reminder-display.component';
+import { ReminderComponent } from './component/reminder/reminder.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ReminderDisplayComponent } from './component/reminder-display/reminder-
     DialogProfileComponent,
     DialogCollabratorsComponent,
     CollabsDisplayComponent,
-    ReminderDisplayComponent
+    ReminderDisplayComponent,
+    ReminderComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ login: Login = new Login();
     this.token = localStorage.getItem('token');
     console.log(this.token);
     this.email = localStorage.getItem('email');
-   this.header ="FundooApp";
+   this.header ='FundooApp';
   }
   onlogout() {
     localStorage.removeItem('token');
@@ -33,17 +33,21 @@ login: Login = new Login();
   }
   trashbox() {
     this.router.navigate(['/dashboard/trash']);
-    this.header ="Trash";
+    this.header ='Trash';
 
   }
   archivebox() {
     this.router.navigate(['/dashboard/archive']);
-    this.header="Archive"
+    this.header = 'Archive'
   }
   notes() {
     this.router.navigate(['/dashboard/note']);
-    this.header ="Notes";
+    this.header ='Notes';
 
+  }
+  remainder(){
+    this.router.navigate(['/dashboard/reminder']);
+    this.header='Reminder'
   }
   profilePic(): void {
     const dialogRef = this.dialog.open(DialogProfileComponent, {height: '400px',

@@ -1,3 +1,12 @@
-<p>
-  reminder-display works!
-</p>
+<div class="mat-chip-list" style="margin:0px">
+  <mat-chip-list aria-label="Fish selection">
+ 
+ 
+     <mat-chip  *ngIf='reminderDisplay!=null'>
+      <mat-icon>access_time</mat-icon> 
+      {{reminderDisplay|date:'medium'}}
+       
+       <mat-icon matChipRemove (click)="remove()" color="primary" selected>cancel</mat-icon>
+     </mat-chip>
+  </mat-chip-list>
+ </div>

@@ -1,7 +1,7 @@
 <div><h3 class="Pinned">PINNED</h3></div>
   <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
   
-    <div *ngFor="let items of note" fxLayoutAlign="space-around center">
+    <div *ngFor="let items of note" fxLayoutAlign="space-around start">
       <mat-card [ngStyle]="{'background-color':items.color}" class="popdownCard">
         <div fxLayout="column" fxLayoutAlign="start">
           <div class="main">
@@ -28,6 +28,9 @@
         <div>
             <app-collabs-display  (click)='opendialogCollab(items.id)'  [noteData]="items"></app-collabs-display>
           </div>
+          <div>
+            <app-reminder-display [notesData]="items"></app-reminder-display>
+        </div>
         <div class="appiconp" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
           <app-app-icon [noteData]="items"></app-app-icon>
         </div>

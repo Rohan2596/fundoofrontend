@@ -15,6 +15,7 @@ import { TrashBoxComponent } from './component/trash-box/trash-box.component';
 import { ArchiveBoxComponent } from './component/archive-box/archive-box.component';
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
+import { ReminderComponent } from './component/reminder/reminder.component';
 const routes: Routes = [
   {
     path: ' ', redirectTo: 'login', pathMatch: 'full'
@@ -63,10 +64,10 @@ const routes: Routes = [
       path: 'note',
       component: NoteComponent
     },
-    // {
-    //   path: '',
-    //   component: DialogBoxComponent
-    // },
+     {
+       path: 'reminder',
+     component: ReminderComponent
+     },
     {
       path: 'trash',
       component: TrashBoxComponent
