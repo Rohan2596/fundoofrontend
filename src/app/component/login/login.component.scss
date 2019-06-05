@@ -9,7 +9,7 @@ div  {
 }
 .matCard{
     
-    width:35%;
+    width:50%;
     height: 100%;
     margin-right: max-content;
     margin-left: max-content;
@@ -40,6 +40,24 @@ div  {
     padding: 10px 15px;
      color: chocolate;
      background-color:gold;
-     size:25px;
-     border: 1px solid goldenrod
+     size:50px;
+     border: 8px solid goldenrod;
+     
      }
+     .pure-button {
+        font-family: inherit;
+        font-size: 100%;
+        *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+        *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+        padding: 0.5em 1em;
+        color: #444; /* rgba not supported (IE 8) */
+        color: rgba(0, 0, 0, 0.80); /* rgba supported */
+        *color: #444; /* IE 6 & 7 */
+        border: 1px solid #999;  /*IE 6/7/8*/
+        border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+        background-color: #E6E6E6;
+        text-decoration: none;
+        border-radius: 2px;
+        margin-left: 10%;
+        margin-top: 3%
+    }

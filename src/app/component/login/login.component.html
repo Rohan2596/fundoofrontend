@@ -27,10 +27,15 @@
             <mat-hint>Password</mat-hint>
           </mat-form-field>
         </div>
-        <div class="buttonLogin" fxLayout="row" fxLayoutGap="80px">
+        <div class="buttonLogin" fxLayout="row" fxLayoutGap="300px">
           <button mat-raised-button color="primary" id="login" (click)="onlogin()">Login</button>
           <button mat-raised-button color="primary" id="register" routerLink='/register'> Register </button>
         </div>
+        <button class="pure-button pure-button-primary" style="background-color:whitesmoke;" (click)="socialSignIn('facebook')">      <img src="https://img.icons8.com/color/48/000000/facebook.png"></button>
+          <button class="pure-button pure-button-primary" style="background-color:whitesmoke;" (click)="socialSignIn('google')">  <img src="https://img.icons8.com/color/48/000000/google-plus.png"></button> 
+          <button class="pure-button pure-button-primary" style="background-color: whitesmoke;"(click)="socialSignIn('linkedin')"> <img src="https://img.icons8.com/color/48/000000/linkedin.png"></button> 
+
+        
       </form>
 
 

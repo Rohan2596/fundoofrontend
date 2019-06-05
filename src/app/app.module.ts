@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './component/register/register.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import{MatIconModule} from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './component/login/login.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
@@ -39,7 +39,33 @@ import { DialogCollabratorsComponent } from './component/dialog-collabrators/dia
 import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
 import { ReminderDisplayComponent } from './component/reminder-display/reminder-display.component';
 import { ReminderComponent } from './component/reminder/reminder.component';
-
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedinLoginProvider
+} from 'angular-6-social-login'
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("251657235707251")
+        },
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider('28644136467-nkjbvgtdgfl74dmnh5gi37578o0l9il6.apps.googleusercontent.com')
+        },
+          {
+            id: LinkedinLoginProvider.PROVIDER_ID,
+            provider: new LinkedinLoginProvider("1098828800522-m2ig6bieilc3tpqvmlcpdvrpvn86q4ks.apps.googleusercontent.com")
+          },
+      ]
+  );
+  return config;
+}
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,12 +108,16 @@ import { ReminderComponent } from './component/reminder/reminder.component';
     FormsModule,
     ReactiveFormsModule,
     DemoMaterialModule,
-    ImageCropperModule
-    
-   
+    ImageCropperModule,
+    SocialLoginModule,
+
+
   ],
-  providers: [DataService], 
+  providers: [DataService,  {
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }],
   bootstrap: [AppComponent],
-  entryComponents:[DialogBoxComponent, DialogProfileComponent , DialogCollabratorsComponent]
+  entryComponents: [DialogBoxComponent, DialogProfileComponent , DialogCollabratorsComponent]
 })
 export class AppModule { }

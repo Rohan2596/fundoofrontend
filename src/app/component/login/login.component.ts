@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import {
+  AuthService,
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  LinkedinLoginProvider,
+  SocialUser
+} from 'angular-6-social-login';
 import { HttpService } from 'src/app/services/http-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -14,10 +20,13 @@ export class LoginComponent implements OnInit {
   login: Login = new Login();
   loginForm: FormGroup;
   token: string;
+  authorized: boolean;
+  user:SocialUser;
   constructor(private snackBar: MatSnackBar, private httpservice: HttpService,
               public formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private socialAuthService: AuthService ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group(
@@ -57,5 +66,33 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+  public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+    if(socialPlatform == "facebook"){
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    }else if(socialPlatform == "google"){
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    } else if (socialPlatform == "linkedin") {
+      socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
+    }
+    
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(socialPlatform+" sign in data : " , userData);
+        if (userData != null) {
+
+          this.router.navigate(['/dashboard']);
+          
+          localStorage.setItem('email',userData.email);
+          localStorage.setItem('userName' , userData.name);
+          
+          this.authorized = true;
+          this.user = userData;               
+       }   
+    
+  }
+  
+)}
 
 }

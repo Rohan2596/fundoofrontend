@@ -59,7 +59,8 @@ openDialog(items:any):void{
     data:{
       title:items.title,
       description:items.description,
-      noteId:items.id
+      noteId:items.id,
+      color: items.color
     }
   })
   dialogRef.afterClosed().subscribe(result=>{
