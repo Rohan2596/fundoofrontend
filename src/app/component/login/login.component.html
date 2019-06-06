@@ -1,6 +1,6 @@
-<div class="main" fxLayout="column" fxLayoutAlign="center center">
+
   <div fxLayout="column" fxLayoutAlign="center center">
-    <mat-card>
+    <mat-card class="matCard">
       <mat-card-title class="matCardTitle">
         <h2>FundooNotes</h2>
       </mat-card-title>
@@ -27,7 +27,7 @@
             <mat-hint>Password</mat-hint>
           </mat-form-field>
         </div>
-        <div class="buttonLogin" fxLayout="row" fxLayoutGap="300px">
+        <div class="buttonLogin" fxLayout="row" fxLayoutGap="400px">
           <button mat-raised-button color="primary" id="login" (click)="onlogin()">Login</button>
           <button mat-raised-button color="primary" id="register" routerLink='/register'> Register </button>
         </div>
@@ -41,4 +41,3 @@
 
     </mat-card>
   </div>
-</div>
