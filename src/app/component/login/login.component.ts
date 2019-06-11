@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   token: string;
   authorized: boolean;
-  user:SocialUser;
+  user: SocialUser;
   constructor(private snackBar: MatSnackBar, private httpservice: HttpService,
               public formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -67,32 +67,33 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  public socialSignIn(socialPlatform : string) {
+  public socialSignIn(socialPlatform: string) {
     let socialPlatformProvider;
-    if(socialPlatform == "facebook"){
+    if (socialPlatform === 'facebook') {
       socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-    }else if(socialPlatform == "google"){
+    } else if (socialPlatform === 'google') {
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    } else if (socialPlatform == "linkedin") {
+    } else if (socialPlatform === 'linkedin') {
       socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
     }
-    
+
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
-        console.log(socialPlatform+" sign in data : " , userData);
+        console.log(socialPlatform + ' sign in data : ' , userData);
         if (userData != null) {
 
           this.router.navigate(['/dashboard']);
-          
-          localStorage.setItem('email',userData.email);
+
+          localStorage.setItem('email', userData.email);
           localStorage.setItem('userName' , userData.name);
-          
+
           this.authorized = true;
-          this.user = userData;               
-       }   
-    
+          this.user = userData;
+       }
+
   }
-  
-)}
+
+);
+}
 
 }
