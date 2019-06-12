@@ -32,10 +32,11 @@ console.log(this.data.color);
   onClose() {
     console.log('note Udapted');
     console.log('notedid', this.id);
+    console.log(this.title.value);
     this.note = {
       title: this.title.value,
       description: this.description.value,
-      color: this.color.value
+      // color: this.color.value
     };
     this.noteservice.putRequest('updatenotes?id=' + this.id, this.note).subscribe(
       (response: any) => {

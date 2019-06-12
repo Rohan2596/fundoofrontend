@@ -283,7 +283,7 @@ setPickTime(){
     this.noteservice.putRequest('notes/setcolor?color=' + name + '&noteid=' + this.noteData.id, '').subscribe(
 
       (response: any) => {
-        if (response.statusCode == 10) {
+        if (response.statusCode === 10) {
           this.dataService.changeMessage('add labels');
           this.snackBar.open('color added', 'undo', { duration: 2500 });
         } else {
