@@ -56,34 +56,39 @@
   </div>
 
   <div *ngFor='let collab of collablist' fxAlign="row" fxFlexLayout="space-between center">
-    <div>
+    <div fxAlign="row" fxLayoutAlign="space-between center">
       <button mat-mini-fab color="grey" mat-icon-button aria-label="Example icon-button with a menu">
         <mat-icon>account_circle</mat-icon>
       </button>
-      <div class="Collab">
+      
         <div>{{collab.firstName}} {{collab.lastName}} </div>
         <div>{{collab.emailId}}</div>
-      </div>
+     
+      
+        <button (click)="removecollab(emailId)" mat-button>
+          <mat-icon>cancel</mat-icon>
+        </button>
+
     </div>
   </div>
   
-  <div style="margin-top: 5%" fxAlign="column" fxLayoutGap="18px" fxFlexLayout="space-between start">
+  <div style="margin-top: 5%" fxAlign="row" fxLayoutGap="18px" fxFlexLayout="space-between start">
     <button mat-mini-fab color="grey" mat-icon-button aria-label="Example icon-button with a menu">
       <mat-icon>account_circle</mat-icon>
     </button>
     <input class="input" type="email" matInput placeholder="Enter your email"
       [formControl]="collabEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-
+      <button (click)="addcollab()" mat-button>
+        <mat-icon>done</mat-icon>
+      </button>
   </div>
-  <!-- <div>
-    <button (click)="addcollab()" mat-button>
-      <mat-icon>done</mat-icon>
-    </button></div> -->
-
+  
+   
+     
 
 </div>
 <mat-divider></mat-divider>
 <div class="button">
-  <button mat-button (click)="addcollab()" >Cancel</button>
-  <button mat-button>Save</button>
+  <button mat-button >Cancel</button>
+  <button mat-button   (click)="addcollab()" >Save</button>
 </div>

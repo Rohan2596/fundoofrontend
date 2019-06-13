@@ -16,6 +16,7 @@ import { DialogCollabratorsComponent } from '../dialog-collabrators/dialog-colla
 export class NoteComponent implements OnInit {
  note: any [];
 data: any[];
+collabNotes:any[];
   message: any;
   constructor(private snackBar: MatSnackBar,
               private noteservice: NoteService,
@@ -32,10 +33,11 @@ ngOnInit() {
    }
 
     );
+   this.getCollabnotes();
   }
   opendialogCollab(id: any): void {
     const dialogRef = this.dialog.open(DialogCollabratorsComponent, {
-     minWidth : '200px',minHeight: '250px',
+     minWidth : '150px',minHeight: '250px',
        data: {
 
         noteId: id,
@@ -54,6 +56,14 @@ ngOnInit() {
      this.note = response;
      console.log(response);
       });
+  }
+  getCollabnotes(){
+    this.noteservice.getRequest("getcollabNotes").subscribe(
+      (response:any)=>{
+        this.collabNotes=response;
+        console.log(response);
+      }
+    )
   }
 openDialog(items: any): void {
   const dialogRef = this.dialog.open(DialogBoxComponent, {

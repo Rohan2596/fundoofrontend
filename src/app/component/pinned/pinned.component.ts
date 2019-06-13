@@ -70,7 +70,7 @@ openDialog(items:any):void{
 
 opendialogCollab(id: any): void {
   const dialogRef = this.dialog.open(DialogCollabratorsComponent, {
-    width: '653px',minHeight: '250px',
+    minWidth: '200px',minHeight: '250px',
      data: {
 
       noteId: id,
