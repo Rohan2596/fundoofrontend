@@ -22,20 +22,20 @@ export class AppIconComponent implements OnInit {
   arrayOfColors = [
     [
       { name: 'white', hexcode: '#ffffff' },
-      { name: 'lightGreen', hexcode: '#90ee90' },
-      { name: 'purple', hexcode: '#800080' },
-      { name: 'red', hexcode: '#ff0000' },
+      { name: 'lightGreen', hexcode: '#90EE90' },
+      { name: 'purple', hexcode: '#beaded' },
+      { name: 'pink', hexcode: '#FFC0CB' },
     ],
     [
-      { name: 'Teal', hexcode: '#008080' },
+      { name: 'Teal', hexcode: '#66cccc' },
       { name: 'pink', hexcode: '#ffc0cb' },
-      { name: 'orange', hexcode: '#ffa500' },
-      { name: 'blue', hexcode: '#0000ff' },
+      { name: 'orange', hexcode: '#ffcc99' },
+      { name: 'aqua', hexcode: '#00FFFF' },
     ],
     [
-      { name: 'brown', hexcode: '#a52a2a' },
-      { name: 'yellow', hexcode: '#ffff00' },
-      { name: 'darkBlue', hexcode: '#00008b' },
+      { name: 'burlywood', hexcode: '#DEB887' },
+      { name: 'moccasin', hexcode: '#FFE4B5' },
+      { name: 'deepskyblue', hexcode: '#00BFFF' },
       { name: 'gray', hexcode: '#808080' }
     ]
   ];

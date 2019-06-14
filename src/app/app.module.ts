@@ -39,6 +39,7 @@ import { DialogCollabratorsComponent } from './component/dialog-collabrators/dia
 import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
 import { ReminderDisplayComponent } from './component/reminder-display/reminder-display.component';
 import { ReminderComponent } from './component/reminder/reminder.component';
+import { SearchComponent } from "./component/search/search.component";
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -89,7 +90,8 @@ export function getAuthServiceConfigs() {
     DialogCollabratorsComponent,
     CollabsDisplayComponent,
     ReminderDisplayComponent,
-    ReminderComponent
+    ReminderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

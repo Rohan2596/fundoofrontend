@@ -5,7 +5,7 @@ input.input:focus{
     width: 60%
 }
 .popupCard{
-    width: 498px;
+   min-width:300px ; 
     box-shadow:  0 3px 5px rgba(0,0,0,0.20);
     height: 25px;
 }

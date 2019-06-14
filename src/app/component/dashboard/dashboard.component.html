@@ -24,6 +24,7 @@
 
           <mat-card appearance="outline" style="border-radius: 72px">
             <mat-icon matSuffix>search</mat-icon>
+            <input (keyup)="onKey($event)">
             <mat-label  fxHide.xs >Search</mat-label>
             <!-- <input type="search" matInput placeholder="Search"> -->
 

@@ -16,6 +16,7 @@ import { ArchiveBoxComponent } from './component/archive-box/archive-box.compone
 import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { ReminderComponent } from './component/reminder/reminder.component';
+import { SearchComponent } from './component/search/search.component';
 const routes: Routes = [
   {
     path: ' ', redirectTo: 'login', pathMatch: 'full'
@@ -81,6 +82,10 @@ const routes: Routes = [
       path:'labels',
       component:LabelComponent
 
+    },
+    {
+      path:'search',
+      component:SearchComponent
     }
 
     ]

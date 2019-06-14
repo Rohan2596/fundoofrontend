@@ -3,7 +3,7 @@
   
     <div *ngFor="let items of note" fxLayoutAlign="space-around start">
       <mat-card [ngStyle]="{'background-color':items.color}" class="popdownCard">
-        <div fxLayout="column" fxLayoutAlign="start">
+        <div fxLayout="column" fxLayoutAlign="start"  fxFlexAlign="stretch">
           <div class="main">
             <div class="apppin">
               <button mat-button (click)="unpinned(items)" matTooltip="pin">

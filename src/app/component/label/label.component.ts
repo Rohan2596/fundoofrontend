@@ -13,6 +13,7 @@ export class LabelComponent implements OnInit {
 label: any[];
 data: any[];
 message: any;
+labelnotes: any;
   constructor(private labelsService: LabelService,
               private snackBar: MatSnackBar,
               private dialog: MatDialog,
@@ -47,6 +48,17 @@ message: any;
     dialogRef.afterClosed().subscribe(result => {
         console.log('dialog labels');
       });
+  }
+
+  getAllLabelsNotes(labels){
+    console.log('getallnotelabels');
+    this.labelsService.getRequest('getlabelsOfNotes?labelid=' + labels.labelId ).subscribe(
+      (response: any ) => {
+        this.labelnotes = response,
+        console.log(this.labelnotes ,' labelsNotes ');
+
+      }
+    );
   }
 
 }
