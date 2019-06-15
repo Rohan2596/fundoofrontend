@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthenticationGuard } from '../../services/AuthGuard';
 import { Login } from '../../models/login';
 import { Router } from '@angular/router';
 import { MatDialog, } from '@angular/material';
 import { DialogProfileComponent } from  '../dialog-profile/dialog-profile.component';
+import { NoteService } from 'src/app/services/note-service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,9 +18,13 @@ token: string;
 title: string;
 header: string;
 login: Login = new Login();
+
+
   constructor(private authGuard: AuthenticationGuard,
               private router: Router,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private noteService:NoteService,
+              private dataService:DataService) { }
 
   ngOnInit() {
     this.token = localStorage.getItem('token');
@@ -58,4 +64,15 @@ login: Login = new Login();
 
       });
   }
+  onSerach(message: string) {
+    this.noteService.getRequest("elasticSearch/getnotesbytitle?query=" + message).subscribe(
+      (response: any) => {
+        // this.obtainNotes.next(response);
+        console.log(response);  
+        this.dataService.changeMessage(response);
+        this.router.navigate(['/dashboard/search']);
+      }
+    );
+}
+
 }

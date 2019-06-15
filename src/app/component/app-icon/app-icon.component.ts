@@ -39,7 +39,7 @@ export class AppIconComponent implements OnInit {
       { name: 'gray', hexcode: '#808080' }
     ]
   ];
-  dateCalendar=new FormControl('');
+  dateCalendar = new FormControl('');
   constructor(private snackBar: MatSnackBar,
               private noteservice: NoteService,
               private labelsService: LabelService,
@@ -59,7 +59,7 @@ setToday() {
 
   const date1 = new Date().toDateString();
 
-  let reminder1 = date1 + ', 8:00 ';
+  const reminder1 = date1 + ', 8:00 ';
 
   console.log('in reminder1==>', reminder1);
   this.noteservice.putRequest('notes/reminder?date=' + reminder1 + '&noteid=' + this.noteData.id, '').subscribe(
@@ -84,7 +84,7 @@ setToday() {
 
 }
 setTomorrow() {
-  const days = ['Mon','Tue', "Wed",'Thu','Fri', "Sat", "Sun", "Mon"];
+  const days = ['Mon', ' Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'];
   let date = new Date().toDateString();
   const rewhr = new Date().getDate() + 1;
   date = date.replace(new Date().getDate().toString(), rewhr.toString());
@@ -114,7 +114,7 @@ setTomorrow() {
   );
 }
 setWeekly() {
-  const days = ['Mon','Tue', "Wed",'Thu','Fri', "Sat", "Sun", "Mon"];
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'];
   let date = new Date().toDateString();
   const rewhr = new Date().getDate() + 7;
   date = date.replace(new Date().getDate().toString(), rewhr.toString());
@@ -145,8 +145,8 @@ setWeekly() {
 
 
 }
-setPickTime(){
-  console.log("pick a date ")
+setPickTime() {
+  console.log('pick a date ');
   console.log(this.dateCalendar.value);
 
   this.noteservice.putRequest('notes/reminder?date=' + this.dateCalendar.value + '&noteid=' + this.noteData.id, '').subscribe(
@@ -168,7 +168,7 @@ setPickTime(){
 
     }
   );
-  this.dateCalendar=null;
+  this.dateCalendar = null;
 }
 
 
@@ -265,7 +265,7 @@ setPickTime(){
     this.labelsService.putRequest('labels/addnote?labelid=' + labels.labelId + '&noteid=' + this.noteData.id, '').subscribe(
 
       (response: any) => {
-        if (response.statusCode == 11) {
+        if (response.statusCode === 11) {
 
           this.snackBar.open('label added', 'undo', { duration: 2500 });
           this.dataService.changeMessage('add labels');
