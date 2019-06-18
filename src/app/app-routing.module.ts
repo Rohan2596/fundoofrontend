@@ -17,6 +17,7 @@ import { LabelComponent } from './component/label/label.component';
 import { DialogLabelComponent } from './component/dialog-label/dialog-label.component';
 import { ReminderComponent } from './component/reminder/reminder.component';
 import { SearchComponent } from './component/search/search.component';
+import { LabelNotesComponent } from './component/label-notes/label-notes.component';
 const routes: Routes = [
   {
     path: ' ', redirectTo: 'login', pathMatch: 'full'
@@ -86,6 +87,10 @@ const routes: Routes = [
     {
       path:'search',
       component:SearchComponent
+    },
+    {
+      path:'label-notes',
+      component: LabelNotesComponent
     }
 
     ]

@@ -3,26 +3,24 @@
      
         border-radius:4%;
         margin-left:10px;
+        margin-top: 10px;
         min-height:28px;
-       max-width:223px ;
-       margin-top: 10px;
-        box-shadow: 2px 2px 2px #888888;
+       max-width:223px; 
+      box-shadow: 4px 4px 4px #888888;
     }
-    .others{
-      margin-left: 2%;
+    .popdownCard:hover{
+      box-shadow: 10px 10px 8px #888888;
+    }
+    .Pinned{
+      margin-left: 28%;
       margin-top:2%;
       font-family: Roboto,Arial,sans-serif;
       font-weight: normal;
       font-size: 11px
     }
-  
-    .popdownCard:hover{
-      box-shadow: 10px 10px 10px #858585; 
-    }
     mat-card:hover{
       .appiconp{
-        visibility:visible;
-    
+        visibility:visible
       }
         }
       .appiconp{
@@ -38,11 +36,7 @@
       .apppin{
         visibility: hidden;}   
   
-   .app-label-display{
-        min-height: 0px;
-        margin-top: 0px;
-        margin-bottom: 4px;
-      }
+  
   .apppin{
   
     width: 42px;
@@ -72,4 +66,8 @@
   }
   .main{
     width: 90%;
+  }
+  .app-label-display{
+    margin-top: 20px;
+    margin-bottom: 8px;
   }

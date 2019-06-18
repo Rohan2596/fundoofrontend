@@ -4,6 +4,7 @@ import { LabelService } from 'src/app/services/label-service';
 import { MatDialog } from '@angular/material';
 import { DialogLabelComponent } from './../dialog-label/dialog-label.component';
 import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-label',
   templateUrl: './label.component.html',
@@ -17,7 +18,8 @@ labelnotes: any;
   constructor(private labelsService: LabelService,
               private snackBar: MatSnackBar,
               private dialog: MatDialog,
-              private dataService: DataService) { }
+              private dataService: DataService,
+              private router: Router) { }
 
   ngOnInit() {
    this.getlabels();
@@ -34,7 +36,7 @@ labelnotes: any;
   this.labelsService.getRequest('getlabels').subscribe(
   (response: any) => {
     this.label = response,
-    console.log(this.label,'labels  '),
+    console.log(this.label,'labels'),
     this.dataService.changeMessage('label');
    }
 
@@ -52,13 +54,20 @@ labelnotes: any;
 
   getAllLabelsNotes(labels){
     console.log('getallnotelabels');
-    this.labelsService.getRequest('getlabelsOfNotes?labelid=' + labels.labelId ).subscribe(
-      (response: any ) => {
-        this.labelnotes = response,
-        console.log(this.labelnotes ,' labelsNotes ');
+    if (labels.labelId==null) {
+      console.log('labelsId null');
+    } else {
+      this.labelsService.getRequest('getlabelsOfNotes?labelid=' + labels.labelId ).subscribe(
+        (response: any ) => {
+          this.labelnotes = response,
+          console.log(this.labelnotes ,' labelsNotes ');
+          this.dataService.changeMessage(response);
+        this.router.navigate(['/dashboard/label-notes']);
+        }
 
-      }
-    );
+      );
+
+    }
   }
 
 }

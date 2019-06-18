@@ -47,6 +47,7 @@ import {
   FacebookLoginProvider,
   LinkedinLoginProvider
 } from 'angular-6-social-login'
+import { LabelNotesComponent } from './component/label-notes/label-notes.component';
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
@@ -91,7 +92,8 @@ export function getAuthServiceConfigs() {
     CollabsDisplayComponent,
     ReminderDisplayComponent,
     ReminderComponent,
-    SearchComponent
+    SearchComponent,
+    LabelNotesComponent
   ],
   imports: [
     BrowserModule,

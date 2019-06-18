@@ -65,9 +65,7 @@
    
     
 }
-// .mat-toolbar-row{
-//     position: fixed
-// }
+
 .bulbsimage{
     width: 44px;
     align-content: center;
@@ -81,12 +79,15 @@
     display: flex;
     margin-left:10px
 }
+
 .iconname{
   
     width:50%;
     display: flex;
     margin-top:14px
 }
+
+
 .label
 {
     margin-left: 20%;
@@ -108,7 +109,7 @@
     background-color: yellow
 }
 .mat-sidenav-container{
-    height:100vh;
+    height:100%;
     width: 100%;
     flex: 1;
 }
@@ -116,7 +117,15 @@
     position: relative;
     z-index: 1;
     display: block;
-    height: 525px;
+    height:87vh;
     overflow: auto;
     width: 100%
+}
+.searchInput{
+    width:800px;
+    height: 37px;
+    border-width: 0;
+}
+input.searchInput:focus{
+    outline-width: 0;
 }

@@ -21,15 +21,18 @@
         </div>
 
         <div class="search" fxLayout="column" fxLayoutAlign="center">
-      
+
 
 
 
           <mat-card appearance="outline" style="border-radius: 72px">
+            <div fxLayout="row" fxLayoutAlign="center" >
             <mat-icon matSuffix>search</mat-icon>
-            <input   (input)="onSerach($event.target.value)"    type="text"  autocomplete="off" placeholder="Search">
+            <input class="searchInput" (input)="onSerach($event.target.value)" type="text" autocomplete="off"
+              placeholder="Search">
+            </div>
 
-            <!-- <input type="search" matInput placeholder="Search"> -->
+
 
           </mat-card>
         </div>
@@ -39,7 +42,7 @@
             style="border-width: 0px;background: whitesmoke;margin-top: 15px;">
             <img src="https://img.icons8.com/bubbles/50/000000/services.png">
           </button>
-         
+
         </div>
 
         <!-- <div>
@@ -60,7 +63,7 @@
         <div fxLayoutAlign="center">
           <button color=gray [matMenuTriggerFor]="accountmenu" class="buttonAccountCircle" matTooltip={{email}}
             style="border-width: 0px;background: white;margin:auto">
-            <img mat-card-avatar src="http://localhost:8080/users/getProfilePic/{{token}}"/>
+            <img mat-card-avatar src="http://localhost:8080/users/getProfilePic/{{token}}" />
           </button>
         </div>
       </mat-toolbar-row>
@@ -71,61 +74,61 @@
 
   <mat-divider></mat-divider>
   <div class="mat-sidenav-container">
-    <mat-sidenav-container >
+    <mat-sidenav-container>
 
       <mat-sidenav #sidenav mode="side" style="width: 20%;height: 100vh">
         <mat-nav-list style="background-color: whitesmoke;height: 100vh">
-          <div  fxLayout="column" fxLayoutAlign="start center" >
-           
-              <div  class="notes" (click)="notes()" >
-                <div class="iconimage"  matTooltip="Notes">
-                  <img src="https://img.icons8.com/bubbles/50/000000/light-on.png">
-                  <div fxHide.xs class="iconname"> Notes</div>
-                </div>
+          <div fxLayout="column" fxLayoutAlign="start center">
+
+            <div class="notes" (click)="notes()">
+              <div class="iconimage" matTooltip="Notes">
+                <img src="https://img.icons8.com/bubbles/50/000000/light-on.png">
+                <div fxHide.xs class="iconname"> Notes</div>
+              </div>
+            </div>
+
+
+
+            <div class="notes" (click)="remainder()">
+
+              <div class="iconimage" matTooltip="Remainder">
+                <img src="https://img.icons8.com/bubbles/50/000000/alarm.png">
+                <div fxHide.xs class="iconname">Remainder</div>
               </div>
 
+            </div>
 
 
-              <div class="notes"  (click)="remainder()" >
-
-                <div class="iconimage" matTooltip="Remainder">
-                  <img src="https://img.icons8.com/bubbles/50/000000/alarm.png">
-                  <div fxHide.xs class="iconname">Remainder</div>
-                </div>
-
-              </div>
-
-          
           </div>
-        <hr>
+          <hr>
           <div style="margin-left: -24px;">
-              <p class="label" style="margin-top: -17px;margin-left: 13px;"> LABELS </p>
+            <p class="label" style="margin-top: -17px;margin-left: 13px;"> LABELS </p>
             <app-label></app-label>
           </div>
           <hr>
-          <div  fxLayout="column" fxLayoutAlign="start center" >
-           
-              <div class="notes" (click)="archivebox()">
+          <div fxLayout="column" fxLayoutAlign="start center">
 
-                <div class="iconimage"    matTooltip="Archive">
-                  <img src="https://img.icons8.com/bubbles/50/000000/folder-invoices.png">
-                  <div fxHide.xs class="iconname">Archive</div>
+            <div class="notes" (click)="archivebox()">
+
+              <div class="iconimage" matTooltip="Archive">
+                <img src="https://img.icons8.com/bubbles/50/000000/folder-invoices.png">
+                <div fxHide.xs class="iconname">Archive</div>
               </div>
 
+            </div>
+            <div class="notes" (click)="trashbox()">
+              <div class="iconimage" matTooltip="Trash">
+                <img src="https://img.icons8.com/bubbles/48/000000/trash.png">
+                <div fxHide.xs class="iconname">Trash</div>
               </div>
-              <div class="notes" (click)="trashbox()"   >
-                <div  class="iconimage"  matTooltip="Trash">
-                  <img src="https://img.icons8.com/bubbles/48/000000/trash.png">
-                  <div fxHide.xs class="iconname">Trash</div>
-              </div>
-              </div>
-         
+            </div>
+
           </div>
 
 
         </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content  class="mat-sidenav-content">
+      <mat-sidenav-content class="mat-sidenav-content">
         <router-outlet></router-outlet>
 
       </mat-sidenav-content>
@@ -133,11 +136,12 @@
     </mat-sidenav-container>
   </div>
 
-  <div    style=" width: 29%;height: 300%;">
+  <div style=" width: 29%;height: 300%;">
     <mat-menu #accountmenu="matMenu">
       <div style="height: 130px;width: 280px;">
         <div fxLayout="row">
-          <mat-icon  matTooltip="{{email}}"   (click)="profilePic()"> <img mat-card-avatar src="http://localhost:8080/users/getProfilePic/{{token}}"/></mat-icon>
+          <mat-icon matTooltip="{{email}}" (click)="profilePic()"> <img mat-card-avatar
+              src="http://localhost:8080/users/getProfilePic/{{token}}" /></mat-icon>
         </div>
         <p fxLayout="row" fxLayoutAlign="center center"> {{email}} </p>
         <hr>
