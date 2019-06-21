@@ -38,3 +38,43 @@
       </mat-card>
     </div>
   </div>
+
+  <div fxLayout="column wrap" fxLayoutAlign="start" fxLayoutGap="20px">
+  
+    <div *ngFor="let items of note" fxLayoutAlign="space-around start">
+      <mat-card [ngStyle]="{'background-color':items.color}" class="popdownCardList">
+        <div fxLayout="column" fxLayoutAlign="start"  fxFlexAlign="stretch">
+          <div class="main">
+            <div class="apppin">
+              <button mat-button (click)="unpinned(items)" matTooltip="pin">
+  
+                <img src="../../../assets/pin.svg">
+              </button>
+            </div>
+  
+            <div class="title">
+              <div (click)="openDialog(items)" matRipple [matRippleCentered]="centered">
+                {{items.title}}</div>
+  
+            </div>
+          </div>
+          <div class="description" (click)="openDialog(items)" matRipple [matRippleCentered]="centered"
+            style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px;width: 235px;word-wrap: break-word;">
+            {{items.description}}</div>
+        </div>
+        <div  class="app-label-display">
+          <app-label-display  [noteData]="items"></app-label-display>
+        </div>
+        <div>
+            <app-collabs-display  (click)='opendialogCollab(items.id)'  [noteData]="items"></app-collabs-display>
+          </div>
+          <div>
+            <app-reminder-display [notesData]="items"></app-reminder-display>
+        </div>
+        <div class="appiconp" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
+          <app-app-icon [noteData]="items"></app-app-icon>
+        </div>
+  
+      </mat-card>
+    </div>
+  

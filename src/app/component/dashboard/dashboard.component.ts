@@ -6,6 +6,7 @@ import { MatDialog, } from '@angular/material';
 import { DialogProfileComponent } from  '../dialog-profile/dialog-profile.component';
 import { NoteService } from 'src/app/services/note-service';
 import { DataService } from 'src/app/services/data.service';
+import { ViewService } from 'src/app/services/view.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,12 +20,14 @@ title: string;
 header: string;
 login: Login = new Login();
 
+toggle:boolean=true;
 
   constructor(private authGuard: AuthenticationGuard,
               private router: Router,
               private dialog: MatDialog,
               private noteService:NoteService,
-              private dataService:DataService) { }
+              private dataService:DataService,
+              private view :ViewService) { }
 
   ngOnInit() {
     this.token = localStorage.getItem('token');
@@ -74,5 +77,19 @@ login: Login = new Login();
       }
     );
 }
+
+list() {
+  this.toggle = false;
+  this.view.gridview(this.toggle);
+  console.log(this.toggle);
+  
+  
+  }
+  grid() {
+  this.toggle = true;
+  this.view.gridview(this.toggle);
+  console.log(this.toggle);
+  
+  }
 
 }

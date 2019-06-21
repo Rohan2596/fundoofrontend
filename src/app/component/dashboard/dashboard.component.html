@@ -36,22 +36,23 @@
 
           </mat-card>
         </div>
-
+<!-- 
         <div>
           <button class="buttonSettings" matTooltip="settings "
             style="border-width: 0px;background: whitesmoke;margin-top: 15px;">
             <img src="https://img.icons8.com/bubbles/50/000000/services.png">
           </button>
 
-        </div>
+        </div> -->
 
-        <!-- <div>
-            <button mat-icon-button class="buttonList" matTooltip="List"
-              style="border-width: 0px;background: whitesmoke;margin-top: 1px;margin:auto">
-              <img src="https://img.icons8.com/dusk/48/000000/back-sorting.png">
-
-            </button>
-          </div> -->
+        <div *ngIf="toggle==true"> <button mat-icon-button (click)="list()">
+          <mat-icon><img src="../../../assets/NonGrid.svg" alt=""></mat-icon>
+          </button>
+          </div>
+          <div *ngIf="toggle==false"> <button mat-icon-button (click)="grid()">
+          <mat-icon style="color: gray"><img src="../../../assets/gridIcon.svg" alt=""></mat-icon>
+          </button>
+          </div>
 
         <div>
           <button class="buttonApps" matTooltip="Apps" [matMenuTriggerFor]="social"
