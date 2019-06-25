@@ -39,7 +39,7 @@ import { DialogCollabratorsComponent } from './component/dialog-collabrators/dia
 import { CollabsDisplayComponent } from './component/collabs-display/collabs-display.component';
 import { ReminderDisplayComponent } from './component/reminder-display/reminder-display.component';
 import { ReminderComponent } from './component/reminder/reminder.component';
-import { SearchComponent } from "./component/search/search.component";
+import { SearchComponent } from './component/search/search.component';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -49,7 +49,7 @@ import {
 } from 'angular-6-social-login'
 import { LabelNotesComponent } from './component/label-notes/label-notes.component';
 export function getAuthServiceConfigs() {
-  let config = new AuthServiceConfig(
+  const config = new AuthServiceConfig(
       [
         {
           id: FacebookLoginProvider.PROVIDER_ID,
